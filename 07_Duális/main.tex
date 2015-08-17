@@ -1,0 +1,332 @@
+% $Header: /cvsroot/latex-beamer/latex-beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 1.7 2007/01/28 20:48:23 tantau Exp $
+
+% Version for PROJECTOR (Vetíthetõ változat)
+% Uncomment the next line (A vetíthetõ változathoz vedd ki a % jelet a következõ sor elejérõl)
+%\documentclass{beamer}
+% End of version for PROJECTOR (A vetíthetõ változat vége)
+
+% PRINTABLE version (Nyomtatható változat):
+% Uncomment the next two lines (vedd ki a % jelet a következõ 2 sor elejérõl)
+%\documentclass{article}
+%\usepackage{beamerarticle}
+% End of PRINTABLE version (A nyomtatott változat beállításának vége)
+
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  % or ...
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+% Magyar szöveg
+\usepackage[magyar]{babel}		% a Babel csomagot a magyar nyelvvel használjuk
+\usepackage[latin2]{inputenc}		% Latin-2-es kódolású ez a forrás
+\usepackage{t1enc}			% a belsõ ábrázolás és a kimeneti font-kódolás
+					% a T1 kódolás
+\usepackage{indentfirst}		% az elsõ bekezdés is behúzott legyen, ne csak a 2-tól
+\frenchspacing				% a mondatköz ugyanakkora nagy, mint a szóköz
+\setlength{\parskip}{\smallskipamount}	% bekezdések közötti távolság beállítása
+					% (gumi-méret: 3pt plus 1pt minus 1 pt)
+% Magyar szöveg vége
+
+
+% Angol szöveg
+%\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+% Angol szöveg vége
+
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\def\screenshotsize{0.70}
+\def\screenshotsizeB{0.50}
+\def\maintitle{Számítógépes alkalmazások \\Informatika vállalati környezetben}
+\def\shorttitle{SZALK -- Vállalati informatika}
+\def\longdate{Sopron, 2015.}
+\def\shortdate{2015}
+
+%packages to use
+\usepackage{graphicx}
+\usepackage{fancybox} 
+\usepackage{multicol}
+
+\only<beamer>{
+%Insert frame number to footline
+%Tested with the next themes: Warsaw, Berlin, Szeged, ...
+\newcommand*\oldmacro{}%
+\let\oldmacro\insertshorttitle%
+\renewcommand*\insertshorttitle{%
+  \oldmacro\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+%End of frame number to footline
+}
+
+\title[\shorttitle] % (optional, use only with long paper titles)
+{\maintitle}
+
+\author[Soós Sándor] % (optional, use only with lots of authors)
+{Soós Sándor}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[NYME SKK INGA] % (optional, but mostly needed)
+{
+%  \inst{1}%
+  Nyugat-magyarországi Egyetem\\
+  Simonyi Károly Mûszaki, Faanyagtudományi és Mûvészeti Kar\\
+  Informatikai és Gazdasági Intézet\\
+  \vspace{0.3cm}
+  E-mail: soossandor@inf.nyme.hu
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[\shortdate] % (optional, should be abbreviation of conference name)
+{\longdate}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+
+\only<article>{
+\begin{titlepage}
+
+\begin{center}
+
+%\vspace*{1cm}
+\Large
+\textsc{\maintitle}\\
+
+\vspace{5cm}
+
+%\LARGE
+\textsc{Soós Sándor}\\
+\vspace{2cm}
+  Nyugat-magyarországi Egyetem\\
+  Simonyi Károly Mûszaki, Faanyagtudományi és Mûvészeti Kar\\
+  Informatikai és Gazdasági Intézet\\
+  \vspace{0.3cm}
+  soossandor@inf.nyme.hu\\
+\vspace{3cm}
+%\textsc{\today}\\ %%Date - better you write it yourself.
+\textsc{\longdate}\\
+
+\end{center}
+
+\end{titlepage}
+}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+\only<beamer>{
+\pgfdeclareimage[height=1cm]{university-logo}{images/nyme_skk}
+\logo{\pgfuseimage{university-logo}}
+}
+
+%\only<beamer>{\subject{Practical Computer Science}}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+\only<beamer>{
+\begin{frame}{}
+  \titlepage
+\end{frame}
+}
+
+\begin{frame}{Tartalomjegyzék}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+\section{Bevezetés}
+\label{sec:Bevezetés}
+
+\begin{frame}{Mirõl lesz szó a mai órán?}
+
+\begin{itemize}
+	\item Mire számítsunk informatikai szempontból, ha duális hallgatóként, gyakornokként, vagy munkavállalóként belépünk egy vállalathoz?
+	\item Milyen informatikai rendszerek mûködnek egy átlagos (nem informatikai) vállalatnál?
+	\item Hogyan használjuk ezeket?
+	\item Mit kell tennünk ehhez?
+\end{itemize}
+
+\end{frame}
+
+\section{Vállalati informatika}
+\label{sec:Vállalati informatika}
+
+\begin{frame}{Vállalati informatika}
+
+Milyen informatikai rendszerek mûködnek egy átlagos (nem informatikai) vállalatnál?
+\begin{itemize}
+	\item Irodai szoftverek, szövegszerkesztõ, táblázatkezelõ stb.
+	\item Pénzügyi tervezés, elemzés, kontrolling
+	\begin{itemize}
+		\item táblázatkezelõ program
+		\item integrált szoftverek
+	\end{itemize}
+	\item Belsõ kommunikációs rendszer (intranet)
+	\item A vállalat mûködését támogató szoftverek egy egységes rendszerben, vagy több különálló program formájában
+
+\end{itemize}
+
+\end{frame}
+
+\subsection{Vállalati információs rendszer}
+\label{sec:Vállalati információs rendszer}
+
+\begin{frame}{Vállalati információs rendszer}
+	\begin{itemize}
+		\item Szigetrendszerek
+		\begin{itemize}
+			\item egymástól független rendszereket használ a vállalat: munkaügyi rendszer, bér, raktárkezelés, logisztika stb.
+			\item különbözõ rendszereket kell megismerni, használni, menedzselni
+			\item különbözõ felhasználói azonosítókat, jelszavakat kell kezelni
+			\item nehézkes adatcsere
+		\end{itemize}
+		\item Integrált vállalatirányítási rendszer
+		\begin{itemize}
+			\item egy egységes rendszerben mûködnek a vállalat informatikai rendszerei
+			\item egységes használat, menedzsment
+			\item egy felhasználói azonosító és jelszó
+			\item automatikus adatcsere
+			\item általában bonyolultabb a rendszer, de csak egy darabot kell megismerni
+			\item elõnyös, ha moduláris felépítésû, csak azt kell megvenni és használni, amire szükségünk van
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{A vállalati információs rendszer fejlesztése}
+	\begin{itemize}
+		\item Saját fejlesztésû rendszer
+		\begin{itemize}
+			\item saját erõforrások szükségesek a fejlesztéshez és a folyamatos fejlesztéshez
+			\item elsõ ránézésre olcsóbb
+			\item nem könnyû meghatározni, hogy mit szeretnénk és mire lesz szükségünk a jövõben
+			\item mindenben magunkra kell támaszkodnunk
+		\end{itemize}
+		\item Külsõ fejlesztõtõl vásárolt rendszer
+		\begin{itemize}
+			\item a piacon lévõ kész rendszerek közül kell választanunk
+			\item külsõ szakemberek már meghatározták, hogy mire lehet szükségünk
+			\item komoly feladat a kiválasztott rendszer testreszabása, paraméterezése
+			\item komoly szakmai támogatást vehetünk igénybe, természetesen nem ingyen
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{Elterjedt elnevezések, rövidítések}
+\label{sec:Elterjedt elnevezések, rövidítések}
+
+\begin{frame}[allowframebreaks]{Elterjedt elnevezések, rövidítések}
+
+\begin{description}
+	\item[OAS] Office Automation System \\$\Rightarrow$ Irodaautomatizálási rendszer
+	\item[TPS] Transaction Processing System \\$\Rightarrow$ Tranzakció-feldolgozó rendszerek
+	\item[MIR, MIS] Management Information System \\$\Rightarrow$ Menedzsment Információs Rendszer
+	\item[VIR, EIS] Enterprise Information System \\$\Rightarrow$ Vezetõi Információs Rendszer
+	\item[DSS] Decision Support System \\$\Rightarrow$ Döntéstámogató rendszerek
+	\item[ERP, IEA] Enterprise Resource Planning Systems \\$\Rightarrow$ Vállalatirányítási rendszerek
+	\item[CRM] Customer Relationship Management \\$\Rightarrow$ ügyfélkapcsolatok kezelése
+	\item[BSC] Balanced Scorecard \\$\Rightarrow$ Stratégiai döntéstámogató rendszer 
+	\item[SCM] Supply Chain Management \\$\Rightarrow$ ellátási, beszállítói lánc kezelése
+	\item[EAM] Enterprise Asset Management \\$\Rightarrow$ Vállalati eszközmenedzsment
+\end{description}
+
+\end{frame}
+
+\section{Használat}
+\label{sec:Használat}
+
+\begin{frame}[allowframebreaks]{Hogyan használjuk ezeket a rendszereket?}
+	Mit tegyünk abban az esetben, ha duális hallgatóként, gyakornokként, vagy munkavállalóként belépünk egy olyan vállalathoz, amely mûködtet informatikai rendszereket?
+	
+	\begin{itemize}
+		\item Ha a vállalat rendelkezik Informatikai Szabályzattal, akkor az részletesen bemutatja, hogy milyen informatikai rendszerek mûködnek és azokat hogyan tudják használni a dolgozók
+		\item Ha nincs ilyen szabályzat, akkor más módon kell megszereznünk a következõ információkat:
+		\begin{itemize}
+			\item Vállalati e-mail cím és annak használati lehetõségei, a postafiókba való belépés módja, felhasználói név, jelszó
+			\item Tisztázni kell, hogy milyen informatikai rendszerekhez férhetünk hozzá
+			\item Minden ilyen rendszerhez kapnunk kell egy vagy több [Felhasználói név -- Jelszó] párost, és a hozzáférés módjáról szóló információt. Ez utóbbi lehet egy domain név, vagy egy, a számítógépünkre telepítendõ program
+			\item Az egyes rendszerek jellege és összetettsége függvényében szükségünk lehet valamilyen oktatóanyagra. Ez lehet egy nyomtatott kézikönyv vagy rövidebb leírás, de lehet elektronikus dokumentum, oktatófilm, vagy esetleg oktatóprogram. Az is elõfordulhat, hogy hagyományos, vagy elektronikus tanfolyamon tudjuk elsajátítani a tudnivalókat
+			\item A nagyobb integrált rendszerek esetében elképzelhetõ, hogy a vállalat, vagy a rendszer szállítója az éles rendszer mellett üzemeltet egy oktatóverziót is. Szokták ezt Homokozónak (Sandbox) is nevezni. Ha van ilyen, akkor ahhoz kapunk egy külön belépési lehetõséget. Ezzel minden funkciót kipróbálhatunk anélkül, hogy félnünk kellene, hogy elrontunk valamit.
+		\end{itemize}
+		
+		\item Minden rendszer esetében tisztázandó kérdés, hogy azokat csak bizonyos számítógépekrõl tudjuk elérni, vagy szabad a hozzáférés. Az is elõfordulhat, hogy csak a vállalati IP címekrõl tudjuk elérni valamelyik rendszert. Ilyenkor elképzelhetõ, hogy kapunk távoli elérési lehetõséget ún. VPN (virtuális magánhálózat) segítségével. Ilyenkor egy megfelelõ programot (VPN kliens) kell telepítenünk és felkonfigurálnunk arra a számítógépre, amely segítségével távolról is el szeretnénk érni a vállalati rendszereket. Ebben a vállalati informatikusok tudnak segítséget nyújtani 
+		\item Ha kapunk saját számítógépet a vállalatnál, akkor feltétlenül tisztáznunk kell, hogy milyen jogosultságokat kapunk ezen a gépen. Meg kell beszélni, hogy milyen programokat telepíthetünk, vagy kérhetünk telepíteni a gépre. Elképzelhetõ, hogy a vállalat úgy szabályozza, ezt a kérdést, hogy semmit nem telepíthetünk a gépre, csak az informatikusok által feltelepített programokat használhatjuk.
+
+	\end{itemize}
+	
+\end{frame}
+
+\only<beamer>{
+\begin{frame}{Összefoglalás}
+	\tableofcontents	
+\end{frame}
+}
+
+\begin{frame}{Befejezés}
+
+\begin{block} {}
+	
+	\begin{center}
+	\vspace{1cm}
+	\LARGE{Köszönöm a figyelmet!}
+	\vspace{1cm}
+	\end{center}
+	
+\end{block}
+
+\end{frame}
+
+\end{document}
+
+

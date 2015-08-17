@@ -1,0 +1,7 @@
+\select@language {magyar}
+\contentsline {section}{\numberline {1.}Adatb\'azis-kezel\'es}{1}
+\contentsline {subsection}{\numberline {1.1.}Az adatb\'azis fogalma}{1}
+\contentsline {subsection}{\numberline {1.2.}Tranzakci\'okezel\'es}{4}
+\contentsline {section}{\numberline {2.}Adatb\'azis-kezel\H o rendszerek}{6}
+\contentsline {subsection}{\numberline {2.1.}Rel\'aci\'os adatmodell}{7}
+\contentsline {subsection}{\numberline {2.2.}Funkcion\'alis f\"ugg\H os\'eg}{9}

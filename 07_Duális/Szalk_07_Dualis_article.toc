@@ -1,0 +1,6 @@
+\select@language {magyar}
+\contentsline {section}{\numberline {1.}Bevezet\'es}{1}
+\contentsline {section}{\numberline {2.}V\'allalati informatika}{1}
+\contentsline {subsection}{\numberline {2.1.}V\'allalati inform\'aci\'os rendszer}{2}
+\contentsline {subsection}{\numberline {2.2.}Elterjedt elnevez\'esek, r\"ovid\IeC {\'\i }t\'esek}{3}
+\contentsline {section}{\numberline {3.}Haszn\'alat}{3}

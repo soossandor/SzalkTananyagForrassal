@@ -1,0 +1,56 @@
+1) A \begin{document} után: A nyomtatott címlapra felírom az intézetet:
+
+\only<article>{
+\begin{titlepage}
+
+\begin{center}
+
+%\vspace*{1cm}
+\Large
+\textsc{\maintitle}\\
+
+\vspace{5cm}
+
+%\LARGE
+\textsc{Soós Sándor}\\
+\vspace{2cm}
+  Nyugat-magyarországi Egyetem\\
+  Simonyi Károly Mûszaki, Faanyagtudományi és Mûvészeti Kar\\
+  Informatikai és Gazdasági Intézet\\
+  \vspace{0.3cm}
+  soossandor@inf.nyme.hu\\
+\vspace{3cm}
+%\textsc{\today}\\ %%Date - better you write it yourself.
+\textsc{\longdate}\\
+
+\end{center}
+
+\end{titlepage}
+}
+
+
+
+2) A végére tesszek egy Összefoglaló diát a Befejezés szekció elejére:
+
+\only<beamer>{
+\begin{frame}{Összefoglalás}
+	\tableofcontents	
+\end{frame}
+}
+
+
+
+HOL TARTOK?
+
+1. ea. kész
+2. ea. kész
+3. ea. kész
+4. ea. kész
+5. ea. kész
+6. ea. kész
+7. ea. kész
+
+Elküldtem az anyagot Takáts Péternek, Jereb Lacinak és Szabó Csillának
+
+
+
