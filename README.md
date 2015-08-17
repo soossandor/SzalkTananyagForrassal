@@ -5,4 +5,5 @@ Feltöltöttem a lektorálásra elküldött anyagot
 
 Feltöltöttem Elek Laci lektori véleményét DOC és PDF formátumban
 
+Feltöltöttem a lektori vélemény alapján módosított változatot
 
