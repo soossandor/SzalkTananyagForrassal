@@ -1,0 +1,1424 @@
+% $Header: /cvsroot/latex-beamer/latex-beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 1.7 2007/01/28 20:48:23 tantau Exp $
+
+% Version for PROJECTOR (Vetíthetõ változat)
+% Uncomment the next line (A vetíthetõ változathoz vedd ki a % jelet a következõ sor elejérõl)
+%\documentclass{beamer}
+% End of version for PROJECTOR (A vetíthetõ változat vége)
+
+% PRINTABLE version (Nyomtatható változat):
+% Uncomment the next two lines (vedd ki a % jelet a következõ 2 sor elejérõl)
+%\documentclass{article}
+%\usepackage{beamerarticle}
+% End of PRINTABLE version (A nyomtatott változat beállításának vége)
+
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  % or ...
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+% Magyar szöveg
+\usepackage[magyar]{babel}		% a Babel csomagot a magyar nyelvvel használjuk
+\usepackage[latin2]{inputenc}		% Latin-2-es kódolású ez a forrás
+\usepackage{t1enc}			% a belsõ ábrázolás és a kimeneti font-kódolás
+					% a T1 kódolás
+\usepackage{indentfirst}		% az elsõ bekezdés is behúzott legyen, ne csak a 2-tól
+\frenchspacing				% a mondatköz ugyanakkora nagy, mint a szóköz
+\setlength{\parskip}{\smallskipamount}	% bekezdések közötti távolság beállítása
+					% (gumi-méret: 3pt plus 1pt minus 1 pt)
+% Magyar szöveg vége
+
+
+% Angol szöveg
+%\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+% Angol szöveg vége
+
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\def\screenshotsize{0.70}
+\def\screenshotsizeB{0.50}
+\def\maintitle{Számítógépes alkalmazások\\Dokumentum-kezelés}
+\def\shorttitle{SZALK - Dokumentum--kezelés}
+\def\longdate{Sopron, 2015.}
+\def\shortdate{2015}
+
+%packages to use
+\usepackage{graphicx}
+\usepackage{fancybox} 
+\usepackage{multicol}
+
+\only<beamer>{
+%Insert frame number to footline
+%Tested with the next themes: Warsaw, Berlin, Szeged, ...
+\newcommand*\oldmacro{}%
+\let\oldmacro\insertshorttitle%
+\renewcommand*\insertshorttitle{%
+  \oldmacro\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+%End of frame number to footline
+}
+
+\title[\shorttitle] % (optional, use only with long paper titles)
+{\maintitle}
+
+\author[Soós Sándor] % (optional, use only with lots of authors)
+{Soós Sándor, egyetemi adjunktus}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[NYME SKK INGA] % (optional, but mostly needed)
+{
+%  \inst{1}%
+  Nyugat-magyarországi Egyetem\\
+  Simonyi Károly Mûszaki, Faanyagtudományi és Mûvészeti Kar\\
+  Informatikai és Gazdasági Intézet\\
+  \vspace{0.3cm}
+  E-mail: soossandor@inf.nyme.hu
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[\shortdate] % (optional, should be abbreviation of conference name)
+{\longdate}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+
+\only<article>{
+\begin{titlepage}
+
+\begin{center}
+
+%\vspace*{1cm}
+\Large
+\textsc{\maintitle}\\
+
+\vspace{5cm}
+
+%\LARGE
+\textsc{Soós Sándor}\\
+
+\vspace{5cm}
+%\textsc{\today}\\ %%Date - better you write it yourself.
+\textsc{\longdate}\\
+
+\end{center}
+
+\end{titlepage}
+}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+\only<beamer>{
+\pgfdeclareimage[height=1cm]{university-logo}{images/nyme_skk}
+\logo{\pgfuseimage{university-logo}}
+}
+
+%\only<beamer>{\subject{Practical Computer Science}}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+\only<beamer>{
+\begin{frame}{}
+  \titlepage
+\end{frame}
+}
+
+\begin{frame}{Tartalomjegyzék}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+\begin{frame}{Mirõl lesz szó a mai órán?}
+
+\begin{itemize}
+	\item Szöveg-feldolgozás
+	\item Szövegszerkesztés -- Kiadványszerkesztés
+	\item Szövegszerkesztõk speciális funkciói
+	\item Tipográfiai tanácsok, ajánlások
+	\item Hogyan írjunk szakdolgozatot?
+	\item Bemutató-készítés, prezentációk
+	\item Táblázatkezelés
+	\item Számítógépes grafika
+	\item Pixelgrafika -- Vektorgrafika
+	\item Színek kezelése
+	\item Konverziók
+	\item Verziókezelés
+\end{itemize}
+
+\end{frame}
+
+
+\section{Dokumentum-feldolgozás}
+\label{sec:DokumentumFeldolgozas}
+
+\begin{frame}{Dokumentum-feldolgozás}
+	
+	\begin{itemize}
+		\item Napjaink korszerû kommunikációs lehetõségei mellett is az írásos dokumentáció maradt az elsõdleges információtárolási és továbbítási forma
+		\item A legtöbb írott dokumentumot azonban ma már számítógéppel állítjuk elõ
+		\item Ennek lehetõségeirõl fogunk most beszélni
+		\item A dokumentumokkal kapcsolatos tevékenységek összessége a \textbf{dokumentum-feldolgozás}. Ez három fõ részre bontható:
+		
+		\begin{enumerate}
+			\item dokumentum készítés
+			\item dokumentum tárolás
+			\item dokumentum visszakeresés
+		\end{enumerate}
+		
+		\item A dokumentum-feldolgozáson belül elõször foglalkozzunk a \textbf{szöveg-feldolgozás}sal, ami a dokumentum szöveges részeinek létrehozásához, tárolásához és visszakereséséhez kapcsolódó tevékenységek összességét jelenti
+	\end{itemize}
+	
+\end{frame}
+
+\subsection{Szöveg-feldolgozás}
+\label{sec:SzovegFeldolgozas}
+
+\begin{frame}{Szöveg-feldolgozás}
+	
+	\begin{itemize}
+		\item Az elõállított elektronikus dokumentumok összetettségétõl függõen három szintet különböztetünk meg:
+		
+		\begin{enumerate}
+			\item text-editor
+					\\ formázás nélküli, text fájlok elõállítása és kezelése, pl. programozói editorok, html szerkesztõk
+					%forrásszövegek (*.txt, *.c, *.pas, *.html, *.tex, \dots)
+			\item szövegszerkesztés
+					\\ formázott, nyomtatásra is alkalmas dokumentumok elõállítása és kezelése, pl. Microsoft Office, OpenOffice
+			\item kiadványszerkesztés, desktop publishing (DTP)
+					\\ igényes, nyomdai minõségû dokumentumok elõállítása és kezelése, pl. \TeX, \LaTeX, MS Publisher, Adobe InDesign, PageMaker, QuarkXPress, Corel Ventura
+		\end{enumerate}
+		
+		\item Nincs éles határ az egyes kategóriák között, de nagyon fontos, hogy tisztában legyünk a különbségekkel
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Szöveg-feldolgozás}
+	
+	\begin{itemize}
+		\item A text-editorokkal most nem foglalkozunk
+		\item A hangsúlyt a szövegszerkesztés és a kiadványszerkesztés vizsgálatára helyezzük
+		\item Hol a határ a kettõ között?
+		\begin{itemize}
+			\item a megbízhatóan kezelhetõ dokumentumok mérete szerint:
+			
+			\begin{itemize}
+				\item szövegszerkesztõ: 10-20 oldal
+				\item kiadványszerkesztõ: nincs korlát
+			\end{itemize}
+			
+			\item a kezelhetõ dokumentumok összetettsége szerint:
+			
+			\begin{itemize}
+				\item szövegszerkesztõ: 1 szövegfolyam beszúrt objektumokkal
+				\item kiadványszerkesztõ: több keret (frame) kezelése, átfolyó dokumentumokkal (újság), tartalomjegyzék, tárgymutató, irodalomjegyzék, stb.
+			\end{itemize}
+			
+			\item az alkalmazás eredeti célja szerint:
+			
+			\begin{itemize}
+				\item szövegszerkesztõ: alapvetõen szövegszerkesztõ kiadványszerkesztõ funkciókkal
+				\item kiadványszerkesztõ: kiadványszerkesztõnek tervezve
+			\end{itemize}
+			
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks,fragile]{Szövegszerkesztõk kevésbé ismert funkciói}
+	
+	\begin{enumerate}
+		\item A szöveg tartalmi egységei:
+		
+		\begin{itemize}
+			\item betû, karakter -- letter, character
+			\item szó -- word: szóközökkel (white space) határolt egység
+			\item bekezdés -- paragraph: Enter karakterekkel határolt egység 
+			\item szakasz (fejezet) -- section: szakaszvége jelekkel határolt egység
+			\item teljes dokumentum -- document
+			\\ $\ $
+			\item Figyelem! A sor és az oldal nem tartalmi egység, automatikusan változhat
+		\end{itemize}
+		
+		\item A szöveg formázása a tartalmi egységekhez igazodik:
+		
+		\begin{itemize}
+			\item karakterjellemzõk: betûtípus, betûméret, betûstílus, betûszín, effektusok
+			\item külön szó jellemzõk nincsenek, esetleg az elválasztást sorolhatjuk ide
+			\item bekezdésjellemzõk: igazítás, térköz, sorköz, számozás, behúzás, tabulátorok, tördelés szabályozása
+			\item szakaszjellemzõk: ide tartoznak a lap beállításai, azaz egy szakasz mindig azonos lapokból áll, lapméret, margók, tájolás, hasábok, fejléc, lábléc, oldalszámozás
+		\end{itemize}
+		
+		\item Stílusok
+		
+		\begin{itemize}
+			\item különbözõ szoftverek eltérõ módon teszik elérhetõvé a stílusok használatát, pl. MS-Office és OpenOffice: stílusok, HTML: CSS
+			\item nem egyedileg formázzuk a betûket, bekezdéseket, helyette betû-, bekezdés-típusokat alakíthatunk ki
+			\item egyszer meghatározzuk az egyes típusok jellemzõit
+			\item az egyes szövegrészekrõl azt mondjuk meg, hogy milyen típusba tartozzon
+			\item a konkrét formázást a szoftvert végzi el dinamikusan
+			\item ha módosítjuk egy típus jellemzõit, akkor automatikusan megváltozik az összes ilyen típusú szövegrészlet formázása
+			\item segíti, hogy mindig egységes maradjon a szöveg(ek) formázása
+		\end{itemize}
+		
+		\item Sablonok
+		
+		\begin{itemize}
+			\item mintafájl hasonló dokumentumok létrehozására
+			\item szövegelemek és stílusok egyaránt lehetnek benne
+			\item például egyszer kell elkészíteni egy szakdolgozat sablont, és mindenki használhatja ugyanazt
+		\end{itemize}
+				
+		\item Nyelv
+		
+		\begin{itemize}
+			\item napjainkban már egyértelmûen elvárás, hogy minden értelemben hibátlan dokumentumokat hozzunk létre bármilyen nyelven
+			\item ez nem csak a begépelt szövegek nyelvét érinti
+			\item helyesírási könyvtárak
+			\item elválasztás
+			\item írásjelek, tizedespont-vesszõ, idézõjelek
+			\item standard szövegek: fejezet, ábra, kép, oldalszám, \dots
+			\item dátum, idõ, pénznem formátumok
+		\end{itemize}
+		
+		\item Automatikus javítás
+			
+			\begin{itemize}
+			  \item segíti és gyorsítja a munkát, de bizonyos funkciókat érdemes kikapcsolni
+				\item kikapcsolandó funkciók: KÉt KEzdõ NAgybetû, Cellák elsõ betûje nagybetû
+			\end{itemize}
+			
+		\item Gyorsszöveg, Kész szöveg, Autotext, makrók
+		
+		\begin{itemize}
+			\item gyakran begépelendõ szövegrészek gyorsítása
+		\end{itemize}
+		
+		\item Helyesírás-ellenõrzés
+		
+		\begin{itemize}
+			\item nagy segítség, de ne higgyünk neki vakon
+			\item legyen kéznél egy megbízható helyesírási szótár, pl. http://magyarhelyesiras.hu/
+		\end{itemize}
+		
+		\item Korrektúra
+		
+		\begin{itemize}
+			\item nagyon hasznos lehetõség, ha egy nagyobb dokumentumon hosszabb ideig dolgozunk, több változat készül belõle, vagy többen dolgozunk rajta
+			\item amikor egy már lezárt változaton módosítunk, vagy a szerzõn kívül valaki más szerkeszti a dokumentumot, akkor kapcsoljuk be a \emph{Korrektúra / Változatok követése} funkciót!
+			\item így a módosításokat javaslatként rögzíti a rendszer, késõbb visszanézhetjük ezeket, és eldönthetjük, hogy elfogadjuk, vagy visszavonjuk ezeket
+			\item legkésõbb a dokumentum lezárásakor ne felejtsünk el véglegesíteni minden javaslatot
+			\item ha valaki átnézi a munkánkat, kérjük meg, hogy õ is így jelezze a javaslatait
+		\end{itemize}
+		
+		\item Tabulátorok:
+		
+		\begin{itemize}
+			\item a szóközzel történõ szövegigazítás helyett
+			\item különbözõ igazítású tabulátorok: balra, jobbra, középre, tizedesvesszõ, \dots
+			\item a bekezdéshez tartozó jellemzõ
+			\item professzionális kinézetû eredményt ad kis munkával
+		\end{itemize}
+		
+		\item Táblázatok:
+		
+		\begin{itemize}
+			\item a tabulátorok mellett egy másik lehetõség táblázatok létrehozására
+			\item nem feltétlenül kell behúzni a cellák közötti vonalakat is
+			\item használhatunk különbözõ vonaltípusokat is
+			\item kombinálhatjuk a tabulátorokkal, de egy cellában Ctrl-Tab-bal tudunk tabulátorjelet beszúrni
+		\end{itemize}
+		
+				\item Fejléc -- Lábléc -- (Oldalszámozás)
+				
+				\begin{itemize}
+					\item szakaszjellemzõ, tehát egy szakaszon belül egyformának kell lennie
+					\item ha különbözõt szeretnénk, akkor új szakaszt kell kezdenünk
+					\item egy szakaszon belül is háromféle lehet: elsõ oldal, páros, páratlan oldal
+					\item beszúrhatunk speciális mezõket is: dátum, oldalszám, oldalak száma, fejezetcímek, \dots
+				\end{itemize}
+				
+				\item Címsorszintek
+				
+				\begin{itemize}
+					\item különbözõ szintû alpontjaink lehetnek: 1-9
+					\item MS-Office, OpenOffice: stílusok segítségével állíthatjuk be: Címsor1, Címsor2, \dots
+					\item \LaTeX: külön parancsok segítségével állíthatjuk be: \verb|\part, \section, \subsection|, \dots
+					\item ezen alapszik a tartalomjegyzék és a vázlatnézet
+				\end{itemize}
+				
+				\item Vázlatnézet
+				
+				\begin{itemize}
+					\item segíti a hosszabb dokumentumok áttekintését
+					\item kiemeli a címsorokat
+					\item szabályozhatjuk, hogy milyen mélységig akarjuk látni a címeket és az alattuk lévõ normál szövegeket
+				\end{itemize}
+				
+				\item Körlevél készítés, címkék, borítékcímzés
+				
+				\begin{itemize}
+					\item hasonló tartalmú, de eltérõ adatokat tartalmazó dokumentum sorozatok készítése
+					\item különválasztjuk az adatokat és a sémát
+					\item készítünk egy adatbázist, egy-egy rekord tartozik egy példányhoz
+					\item készítünk egy sémát, amiben az állandó szövegrészek mellett megjelöljük az adatbázisból kiolvasandó adatelemeket
+					\item összefuttatjuk a sémát és az adatforrást, így megkapjuk a dokumentumköteget
+					\item a végeredmény lehet: különálló lapok, borítékok, különbözõ típusú etikettek (egy oldalon több címke)
+				\end{itemize}
+				
+				\item Matematikai formulák kezelése
+				
+				\begin{itemize}
+					\item tudományos dolgozatok esetében (a szakdolgozat is ilyen) kötelezõ elvárás, hogy megfelelõ minõségben tartalmazzon matematikai kifejezéseket
+					\item a használandó eszköz kiválasztásakor vegyük ezt figyelembe
+					\item több lehetõség közül választhatunk:
+					
+					\begin{enumerate}
+						\item integrált képletszerkesztõ (MS-Office, OpenOffice)
+						\item integrált matematikai leíró nyelv (\LaTeX)
+						\item külsõ eszközökkel elõállított képletek képként beszúrva (Maple, Mathematica, WolframAlpha, \dots)
+					\end{enumerate}
+					
+					\item bármelyik megoldást választjuk, szánjunk idõt az eszköz használatának megtanulására
+					\item alaposan teszteljük le, hogy milyen módon fogjuk illeszteni a képleteket a szöveg többi részéhez, felbontás, oldalszámozás, képletsorszámozás, nyomtatási minõség, \dots
+					\item tartsuk be a matematikai szövegek szedésére vonatkozó szabályokat, és megállapodásokat:
+					
+					\begin{itemize}
+						\item speciális szimbólumok: $\sum$, $\prod$, $\int$, $\pm\infty$, \dots
+						\item speciális mûveleti jelek: $\times, \forall, \exists, \notin, \cap, \subseteq$, \dots
+						\item speciális ábécék: $\alpha, \beta, \Delta, \Omega, \Re$, \dots
+						\item különbözõ fajta és méretû zárójelek: $\left(, \left[, \left\{, \left|, \right|, \right), \right], \right\}$, \dots
+					\end{itemize}
+					
+					\item Például
+					$$
+					f(x) = \sum_{i=0}^{\infty}{\lambda_i x^i \left(\sqrt{\frac{x}{i!}}+\pi^2\right)}
+					$$
+					
+				\end{itemize}
+				
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Tipográfiai tanácsok, ajánlások}
+	
+	\begin{enumerate}
+		\item A dokumentumkészítés javasolt sorrendje: gépelés $\rightarrow$ formázás, a gépelés közben ne foglalkozzuk a formázással
+		\item ENTER csak a bekezdés végén! Esetleg új sor karakter (Shift-Enter)
+		\item Szóközbõl egyszerre csak egyet használunk, azaz szóközzel nem csinálunk helyet! Helyette tabulátorokat használjunk
+		\item Nyitózárójel elõtt van szóköz (1 darab), utána nincsen
+		\item Végzárójel elõtt nincs szóköz, utána van (1 darab)
+		\item Többféle ,,kötõjel'' létezik: -, --, ---
+		\item Többféle szóköz létezik: törhetõ, nem törhetõ, nyújtható, nem nyújtható
+		\item Egyéb írásjelek elõtt nincsen szóköz, utána 1 darab (.:,;!?)
+		\item A magyar idézõjel nem azonos az aposztróffal: \rmfamily ,,magyar idézet'', "aposztróf" \sffamily
+		\item Ügyeljünk a hosszú szavak elválasztására, különösen akkor, ha sorkizárást használunk, használjunk automatikus, vagy opcionális elválasztást (Ctrl+kötõjel)
+		\item Ügyeljünk a laptörésekre! Bizonyos pontokon nem lenne jó, ha odakerülne a laptörés. Ne üres sorokkal oldjuk meg a problémát! Miért?
+		\\ A bekezdésjellemzõk között megadhatunk erre vonatkozó szabályokat: fattyú- és árvasorok, együtt a következõvel, egy oldalra, új oldalra
+		\framebreak
+		\\Például:
+		
+		\begin{itemize}
+			\item a címsort tartsuk együtt a következõ bekezdéssel, ehhez az is kell, hogy a címsor után ne üres sor következzen, hanem a címsor térközét növeljük meg
+			\item hasonlóan általában együtt tartandók egy táblázat sorai
+		\end{itemize}
+		
+		\item Ne vigyük túlzásba a formázási eszközök használatát!
+		\item Milyen dokumentum formátumot használjunk?
+		
+		\begin{itemize}
+			\item Válasszuk szét a munka során használt és a végleges fájlformátumot!
+			\item A munkafájl formátumát majdnem egyértelmûen meghatározza a használt szoftver:
+			
+			\begin{enumerate}
+				\item Winword: DOC bináris
+				\item Winword 2007-tõl: Office Open XML (DOCX)
+				\item \LaTeX: TEX (text)
+				\item OpenOffice Writer: OpenDocument Format (ODF)
+				\item Ne felejtkezzünk el a csatolt fájlokról, fontokról! 
+			\end{enumerate}
+			
+			\item Gondoljuk meg, hogy kinek kell tudni hozzáférni a munkafájlokhoz (munkatársak, korrektor, konzulens, \dots)!
+			
+			\item Végleges dokumentum formátumként olyat válasszunk,
+			
+			\begin{itemize}
+				\item amit bárki kényelmesen el tud olvasni, lehetõleg ingyen
+				\item változatlanul jelenik meg minden körülmények között
+			\end{itemize}
+			
+			\item Mire kell gondolni?
+			
+			\begin{itemize}
+				\item különbözõ nyelvû felhasználók (kódrendszerek)
+				\item különbözõ operációs rendszerek
+				\item olvasható-e online, le kell tölteni, vagy online is olvasható?
+				\item az olvasónak kell-e tudnia módosítani a fájlt?
+			\end{itemize}
+			
+			\framebreak
+			
+			\item Ezeknek a feltételeknek többé-kevésbé megfelelõ fájlformátumok:
+			
+			\begin{itemize}
+				\item TXT
+				\item HTML
+				\item PDF
+				\item PS (Postscript)
+			\end{itemize}
+			
+		\end{itemize}
+		
+		\item Zárt és nyílt szabványok jelentõsége!
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}{Hogyan írjuk a szakdolgozatot és a beadandó feladatokat?}
+	
+	\begin{enumerate}
+		\item Gondoljuk végig az elõbbi szempontokat!
+		\item Ne ragadjunk le az elsõ, legegyszerûbb megoldásnál (Winword)!
+		\item Ne akarjunk mindent egy programmal megoldani!
+		\item Keressük meg a legjobb eszközöket minden feladatra!
+		\item Készüljünk fel az illesztési, és konverziós feladatokra!
+		\item Törekedjünk a hordozható, szabványos, idõtálló megoldásokra! Ezeket valószínûleg évek múlva is használhatjuk majd.
+		\item Bármelyik megoldást választjuk, a munka megkezdése elõtt tervezzük meg az egész folyamatot! Ne a bekötés elõtt egy héttel derüljön ki, hogy nem sikerült elkészíteni az ábrákat!
+		\item Hagyjunk idõt az utolsó simításokra és a nyomtatásra, bekötésre!
+	\end{enumerate}
+	
+\end{frame}
+
+\subsection{Bemutató-készítés}
+\label{sec:BemutatoKeszites}
+
+\begin{frame}{Bemutatók készítése -- Prezentációk}
+	
+	\begin{itemize}
+		\item A dokumentumok speciális formája a prezentáció
+		\item Mi a különbség az írott dokumentum és a prezentáció között?
+		\item Mikor választjuk az írott dokumentumot, mikor a prezentációt?
+		\item A prezentációk típusai:
+		
+		\begin{itemize}
+			\item Információközlõ prezentáció (pl. egyetemi elõadás)
+			
+			\begin{itemize}
+				\item tárgyszerû tudást kell átadnia
+				\item tanulni kell tudni belõle
+				\item a fõ hangsúlynak a tartalmon kell lennie
+				\item persze a forma sem közömbös
+			\end{itemize}
+			
+			\item Figyelemfelkeltõ prezentáció
+			
+			\begin{itemize}
+				\item meg kell gyõzni a hallgatóságot valamirõl
+				\item nagyobb szerepet játszik a forma
+			\end{itemize}
+			
+		\end{itemize}
+		
+		\item Prezentáció-készítõ $\neq$ Powerpoint!!!
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{A prezentáció-készítés folyamata}
+	
+  \begin{enumerate}
+		\item a prezentáció megtervezése
+		\item forrásanyagok elõkészítése
+		\item a prezentáció létrehozása
+		\item az egyes diák létrehozása
+		\item a diák sorrendjének és megjelenítési módjának meghatározása
+		\item a végleges formátum elõállítása, esetleg nyomtatás
+		\item a prezentáció lejátszása, elõadás
+	\end{enumerate}	
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]{A prezentáció-készítés folyamata részletesen}
+	
+  \begin{enumerate}
+		\item a prezentáció megtervezése:
+		
+		\begin{itemize}
+			\item mi a prezentáció célja?
+			\item melyik típusba tartozik?
+			\item kinek fog szólni a prezentáció?
+			\item mennyi idõ áll rendelkezésre az elõadásra, és az elkészítésre?
+			\item hogyan kell majd lejátszani a prezentációt: projektorral kis teremben, nagy teremben, weben, \dots
+		\end{itemize}
+		
+		\item forrásanyagok elõkészítése:
+		
+		\begin{itemize}
+			\item milyen forrás anyagok állnak rendelkezésre
+			\item milyen anyagokat kell-tudunk elkészíteni
+			\item képek, ábrák, grafikák, táblázatok, animációk, videók
+			\item anyagok konvertálása
+			\item vizsgáljuk meg, hogyan fog megjelenni az elõadáson: méret, felbontás, színek, hang, nyelv
+		\end{itemize}
+		
+		\item a prezentáció létrehozása:
+		
+		\begin{itemize}
+			\item milyen formát, stílust, sablont, témát választunk?
+			\item szemben az írott dokumentumnál javasolttal, itt elõbb válasszuk ki a formát, sablont, utána kezdjük el elkészíteni a diákat! Miért?
+			\item tervezzük meg a diák állandó elemeit: diacím, fejléc, lábléc, dátum, diaszám, összes diák száma (legyen, vagy ne legyen?)
+		\end{itemize}
+		
+		\item az egyes diák létrehozása:
+		
+		\begin{itemize}
+			\item a tartalom létrehozása
+			\item különbözõ objektumtípusokat használhatunk:
+			
+			\begin{itemize}
+				\item normál szöveg
+				\item pontozott lista
+				\item számozott lista
+				\item többszintû listák, különbözõ kombinációkban
+				\item grafikus objektumok, ábrák, képek, fotók,
+				\item esetleg animációk, videók, óvatosan használjuk!
+				\item külsõ linkek weblapokra, külsõ programokra
+				\\ ügyeljünk a hordozhatóságra! A lejátszáskor is elérhetõk lesznek-e a külsõ kapcsolatok?
+				\item elemek formázása, színek, betûtípusok, méretek
+			\end{itemize}
+			
+			\item Ne vigyük túlzásba az elemeket és a formázásokat!
+			\item Ne váljon öncélúvá a díszítés!
+			\item Mindig tartsuk szem elõtt a prezentáció célját és a hallgatóságot! Másképp formázzuk a tartalmat, ha a barátunkat akarjuk vele felköszönteni a születésnapján, vagy az államvizsgán akarjuk bemutatni a szakdolgozatunkat
+		\end{itemize}
+		
+		\item a diák sorrendjének és megjelenítési módjának meghatározása:
+		
+		\begin{itemize}
+			\item Gondoljuk át a bemutatónk gondolatmenetét, és ennek megfelelõen rendezzük sorba a diákat!
+			\item Tervezzük meg, hogyan fogjuk átkötni az egyes diákat tartalmilag!
+			\item Lehetõleg ne kelljen oda-vissza ugrálni a diák között! Néha ez nem elkerülhetõ! 
+			\item Ilyenkor gondoljuk meg a dia megismétlésének lehetõségét!
+			\item Nem minden prezentációs eszköz lineáris, lásd Prezi!
+			\item Ott is célszerû beállítani egy lineáris útvonalat is!
+			\item Gondoljunk arra, hogy az olvasó utólag is megnézné a prezentációnkat (ha adunk rá lehetõséget)!
+			\item Látványos effektekkel színesíthetjük a diaátmeneteket
+			\item Animálhatjuk az egyes diákat is
+			\item Ebben is legyünk mértéktartóak!
+		\end{itemize}
+		
+		\item a végleges formátum elõállítása:
+		
+		\begin{itemize}
+			\item Milyen módon adhatjuk közre a prezentációt?
+			
+			\begin{itemize}
+				\item Szerkeszthetõ, módosítható, javítható: PPT, PPS (csak egy átnevezés), PPTX, OpenDocument ODP
+				\item Nem szerkeszthetõ (nehezebben): PDF, Flash, képsorozat (JPG, BMP), HTML slideshow
+			\end{itemize}
+			
+		\end{itemize}
+		
+		\item a prezentáció lejátszása:
+		
+		\begin{itemize}
+			\item Készüljünk fel alaposan!
+			\item Próbáljuk ki a helyszínt!
+			\item Teszteljük a projektort!
+			\item Mûködnek-e a beágyazott elemek? Látszanak-e a projektoron is?
+		\end{itemize}
+		
+	\end{enumerate}	
+	
+\end{frame}
+
+\begin{frame}{Speciális prezentációs eszközök}
+	
+	\begin{enumerate}
+		\item képernyõfotó
+		\item képernyõvideó
+		\item presenter
+		\item mutatópálca
+		\item lézerpointer
+		\item intelligens tábla
+	\end{enumerate}
+	
+\end{frame}
+
+\subsection{Táblázatkezelés}
+\label{sec:Tablazatkezeles}
+
+\begin{frame}{Táblázatkezelés}
+	
+	\begin{itemize}
+		\item Táblázatkezelés $\neq$ Microsoft Excel
+		\item Alternatívák:
+		
+		\begin{itemize}
+			\item OpenOffice Calc
+			\item Cloud Computing megoldások: Google Docs, Zoho, \dots
+		\end{itemize}
+		
+		\item Az alapötlet:
+		
+		\begin{itemize}
+			\item Vegyünk egy nagy négyzetrácsos ,,papírt''
+			\item Minden cellába írhatunk egy számot, egy tetszõleges szöveget, vagy egy képletet
+			\item Minden cellához tartozik egy képlet, egy érték, és egy formátum
+			\item Ezek kombinációival lehet kialakítani a kívánt kalkulációkat
+		\end{itemize}
+		
+		\item További funkciók:
+		
+		\begin{itemize}
+			\item nyilvántartások vezetése
+			\item adatok prezentálása
+			\item kisebb adattáblák kezelése
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{A táblázatkezelõ programok legfontosabb eszközei}
+	
+	\begin{enumerate}
+		\item formázás ugyanúgy, mint a szövegszerkesztõben
+		\item minden cellába írhatunk egy teljes dokumentumot
+		\item cellaformátumok használata, automatikus, kézi beállítás
+		\item ablaktábla rögzítése, felosztás
+		\item sorozatok kezelése
+		\item automatikus kitöltés
+		\item számítások, kifejezések használata
+		\item abszolút és relatív címzés, szorzótábla
+		\item adatok kezelése
+		\item adatok rendezése több szempont szerint
+		\\Hogyan lehet rendezni háromnál több szempont szerint?
+		\item adatok szûrése, Autoszûrõ
+		\item adatok ábrázolása, diagram rajzolás 2D/3D
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}{Függvények}
+	
+	\begin{itemize}
+		\item A számítások egyszerûsítésére több száz függvény áll rendelkezésre különbözõ kategóriákban:
+		
+		\begin{itemize}
+			\item matematikai
+			\item logikai
+			\item trigonometriai
+			\item statisztikai
+			\item pénzügyi
+			\item mátrix
+			\item dátum és idõ
+		\end{itemize}
+		
+		\item A Függvényvarázsló segíti a függvények használatát
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Adatbáziskezelés}
+	
+\begin{itemize}
+	\item Mikor nem elegendõk a táblázatkezelõ programok adatkezelõ képességei?
+	\begin{itemize}
+		\item túl nagy rekordszám
+		\item túl nagy adatbázisméret
+		\item a táblázatkezelõ az egész adattáblát a memóriában tartja, az adatbáziskezelõ csak az éppen szükséges rekordokat
+		\item több adattábla összekapcsolására van szükség
+	\end{itemize}
+	
+	\item Mit értünk adatbázis alatt?
+	\begin{itemize}
+		\item adattáblák
+		\item adattáblák közötti kapcsolatok
+	\end{itemize}
+	
+\end{itemize}
+
+\end{frame}
+
+\section{Számítógépes grafika}
+\label{sec:SzamitogepesGrafika}
+
+\begin{frame}{Számítógépes grafika}
+	
+	\begin{enumerate}
+		\item Pixelgrafika (rasztergrafika)
+		\item Vektorgrafika
+		\item Mi a különbség?
+		\item Melyik a jobb?
+	\end{enumerate}
+		
+	\begin{figure}
+		\centering
+			\includegraphics[height=0.40\textheight]{images/grafika_h.png}
+		\label{fig:grafika_h}
+	\end{figure}
+	
+\end{frame}
+
+\subsection{Pixelgrafika}
+\label{sec:Pixelgrafika}
+
+\begin{frame}{Pixelgrafika -- Rasztergrafika}
+	
+	\begin{itemize}
+		\item Olyan digitális kép, ábra, melyen minden egyes képpontot (pixelt) önállóan definiálunk
+		\item Elõnyei: 
+		
+		\begin{itemize}
+			\item egyszerû adatszerkezet
+			\item egyszerû algoritmus
+			\item gyors feldolgozás
+			\item fotótechnikai trükköknél jól alkalmazható
+		\end{itemize}
+		
+		\item Hátrányai:
+		
+		\begin{itemize}
+			\item az adatállomány nagy méretû
+			\item rögzített felbontás
+			\item nagyításnál a minõség romlik
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Pixelgrafika -- Rasztergrafika}
+	
+	\begin{itemize}
+		\item Felbontás
+		
+		\begin{itemize}
+			\item a külön kezelhetõ pixelek száma (sorok száma $\times$ oszlopok száma)
+			\item minél nagyobb a felbontás, annál jobb a kép minõsége
+			\item minél nagyobb a felbontás, annál nagyobb a fájl mérete
+			\item a pixel tovább nem bontható (egyszínû), a legkisebb megkülönböztethetõ részlet 1 pixel
+			\item ha ismerjük a felbontást és tudjuk, hogy a valóságban mekkora méretû területet ábrázol a kép, akkor meghatározhatjuk, hogy mekkora a legkisebb megkülönböztethetõ részlet
+		\end{itemize}
+		
+		\item Bitfelbontás -- színmélység
+		
+		\begin{itemize}
+			\item 1 pixelt hány biten ábrázolunk
+			\item ettõl függ, hogy hány színt, vagy hány szürkeárnyalatot tudunk megkülönböztetni
+			\item a színek kódolására különbözõ módszereket használhatunk
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\subsection{Vektorgrafika}
+\label{sec:Vektorgrafika}
+
+\begin{frame}{Vektorgrafika}
+	
+	\begin{itemize}
+		\item Olyan számítógépes grafikai eljárás, melynek során geometriai primitíveket (rajzelemeket), mint például pontokat, egyeneseket, görbéket és sokszögeket használunk képek leírására
+		\item Elõnyei:
+		
+		\begin{itemize}
+			\item kisebb fájlméret
+			\item független a felbontástól
+			\item korlátlanul nagyítható minõségromlás nélkül
+			\item kiterjeszthetõ három dimenzióra
+		\end{itemize}
+		
+		\item Hátrányai:
+		
+		\begin{itemize}
+			\item bonyolultabb adatszerkezet
+			\item fényképfeldolgozásra nem használható
+			\item a legtöbb mai megjelenítõ eszközünk rasztergrafikus elven mûködik, ezért konvertálni kell! Kivétel?
+		\end{itemize}
+		
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Vektorgrafika}
+	
+	\begin{itemize}
+		\item A leggyakrabban használt primitívek:
+		
+		\begin{itemize}
+			\item vonalak és vonalláncok
+			\item sokszögek
+			\item körök és ellipszisek
+			\item Bezier-görbék és spline-ok
+			\item szöveg (A számítógépes betûket, például a TrueType fontokat Bezier görbék írják le.)
+		\end{itemize}
+		
+	\end{itemize}
+	
+	
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.70\textwidth]{images/raster_vector_graphics_e.png}
+		\label{fig:raster_vector_graphics_e}
+	\end{figure}
+		
+\end{frame}
+
+\begin{frame}{Bezier-görbe}
+	
+	
+	\begin{table}
+		\centering
+			\begin{tabular}{cc}
+				 \includegraphics[width=0.40\textwidth]{images/bezier_curve.png} & \includegraphics[width=0.40\textwidth]{images/Bezier_2_big.png} \\ 
+				& másodfokú -- quadratikus \\
+				\includegraphics[width=0.40\textwidth]{images/Bezier_3_big.png} &
+				\includegraphics[width=0.40\textwidth]{images/Bezier_4_big.png} \\
+				harmadfokú -- köbös & negyedfokú
+			\end{tabular}
+	\end{table}
+	
+
+\begin{itemize}
+	\item Animáció GIF fájlokban: (Bezier\_1\_big.gif, Bezier\_2\_big.gif, Bezier\_3\_big.gif, Bezier\_4\_big.gif
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Mirõl is van szó matematikailag?}
+	
+	\begin{enumerate}
+		\item Elsõfokú, lineáris Bezier-görbe:
+		$$B(t) = P_0 + t(P_1 - P_0) = (1-t)P_0 + tP_1, t\in[0,1]	$$
+		\item Másodfokú, quadratikus Bezier-görbe:
+		$$B(t) = (1-t)^2P_0 + 2(1-t)tP_1 + t^2P_2, t\in[0,1]   $$
+		\item Harmadfokú, köbös Bezier-görbe:
+		$$B(t) = (1-t)^3P_0 + 3(1-t)^2tP_1 + 3(1-t)t^2P_2 + t^3P_3, t\in[0,1]   $$
+		\item n-edfokú Bezier-görbe:
+		$$B(t) = \sum_{i=0}^n{\binom{n}{i}(1-t)^{n-i}t^iP_i}    $$
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}{Spline-ok}
+	
+	\begin{itemize}
+		\item szakaszosan parametrikus polinomokkal leírt görbe
+		\item az n-edfokú spline-ban legfeljebb n-edfokú polinomszakaszok csatlakoznak egymáshoz úgy, hogy nemcsak a folytonosságot, hanem az n-1-szeri differenciálhatóságot is biztosítják
+		\item lásd Spline01.gif!
+	\end{itemize}
+		
+	\begin{figure}
+		\centering
+			\includegraphics[height=0.50\textheight]{images/spline2.png}
+		\label{fig:spline2}
+	\end{figure}
+		
+\end{frame}
+
+\subsection{Színkezelés}
+\label{sec:Szinkezeles}
+
+\begin{frame}{Hogyan kezeljük a színeket?}
+	
+	\begin{enumerate}
+		\item Fizika:
+	
+		\begin{figure}
+			\centering
+				\includegraphics[height=0.40\textheight]{images/prizma.png}
+			\label{fig:prizma}
+				\includegraphics[height=0.40\textheight]{images/szinskala.png}
+				%\includegraphics[width=0.80\textwidth]{images/szinskala.png}
+			\label{fig:szinskala}
+		\end{figure}
+
+		\item Festészet:
+		
+		\begin{itemize}
+			\item Három alapszín: piros, sárga, kék
+		\end{itemize}
+		
+		\item Világítástechnika:
+		
+		\begin{itemize}
+			\item Három alapszín: piros, zöld, kék
+		\end{itemize}
+
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}{Additív és szubtraktív színkeverés}
+	
+	\begin{figure}
+		\centering
+			\includegraphics[height=0.80\textheight]{images/additiv_szubtraktiv.png}
+		\label{fig:additiv_szubtraktiv}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Additív és szubtraktív színkeverés}
+	
+			\begin{enumerate}
+				\item Additív (összeadó) színkeverés
+				
+				\begin{itemize}
+					\item alapszínek: Red-piros, Green-zöld, Blue-kék (RGB)
+					\item a színek összeadódnak
+					\item egy újabb szín hozzáadása növeli a színerõt
+					\item a három alapszín egyenlõ arányú keveréke fehéret eredményez
+					\item a színek hiánya fekete színt ad
+					\item mintha újabb és újabb színes lámpákat kapcsolnánk be
+				\end{itemize}
+				
+				\item Szubtraktív (kivonó) színkeverés
+				
+				\begin{itemize}
+					\item alapszínek: Cyan-ciánkék, Magenta-bíborvörös, Yellow-sárga (CMY)
+					\item az elnyelt színek szerint keverednek
+					\item újabb szín bekeverése csökkenti a színerõt
+					\item az alapszínek egyenlõ arányú keveréke feketét eredményez
+					\item a színek hiánya fehéret ad
+					\item mintha újabb és újabb átlátszó színes fóliákat helyeznénk egymásra
+				\end{itemize}
+				
+			\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Színek kódolása}
+	Különbözõ módszerekkel kódolhatjuk a színeket:
+	
+	\begin{enumerate}
+		\item Black and White (fekete-fehér):
+		
+		\begin{itemize}
+			\item egy képpontnak két állapota van: fekete vagy fehér
+			\item minden pixel 1 biten kódolható
+		\end{itemize}
+		
+		\item 16 Color (16 szín, vagy szürkeárnyalat)
+		
+		\begin{itemize}
+			\item minden pixel 4 biten kódolható
+		\end{itemize}
+		
+		\item 256 Color (256 szín, vagy szürkeárnyalat)
+		
+		\begin{itemize}
+			\item minden pixel 8 biten (1 bájt) kódolható
+		\end{itemize}
+		
+		Az eddigi módszerek nem színkeverést kódolnak, hanem egy elõre definiált palettáról választják ki az egyik színt, a paletta kicserélésével automatikusan megváltoznak a kép színei
+		\framebreak
+		
+		\item RYB színrendszer
+		
+		\begin{itemize}
+			\item alapszínek: piros, sárga, kék, a tiszta színek (LEGO kockák)
+			\item másodlagos színek: narancs, zöld, lila
+			\item szubtraktív rendszer
+			\item fehér: színek hiánya
+			\item a három alapszín összege: barna
+			\item ezzel a rendszerrel tiszta fekete nem keverhetõ ki
+		\end{itemize}
+				
+		\begin{figure}
+			\centering
+				\includegraphics[height=0.40\textheight]{images/ryb.png}
+			\label{fig:ryb}
+		\end{figure}
+		\framebreak
+		
+		\item RGB színrendszer (24 bit Color), True Color
+		
+		\begin{itemize}
+			\item alapszínek: piros, zöld, kék
+			\item minden színkomponenst 256 fokozatban adhatunk meg
+			\item 24 bit, 16 millió színárnyalat, 1 pixel: 3 bájt
+			\item additív rendszer $\Rightarrow$ minden: fehér, semmi: fekete
+			\item ezt használják a monitorok és a projektorok
+		\end{itemize}
+		
+		\begin{figure}
+			\centering
+				\includegraphics[height=0.40\textheight]{images/rgb.png}
+			\label{fig:rgb}
+		\end{figure}
+		\framebreak
+		
+		\item CMYK színrendszer (32 bit Color)
+		
+		\begin{itemize}
+			\item alapszínek: türkiz (cyan), bíbor (magenta), sárga (yellow), fekete (blacK)
+			\item minden színkomponenst 256 fokozatban adhatunk meg
+			\item 32 bit, 4,3 milliárd (billió) színárnyalat, 1 pixel: 4 bájt
+			\item szubtraktív rendszer $\Rightarrow$ minden: fekete, semmi: fehér
+			\item ezt használják a nyomtatók
+			\item egyes képszerkesztõ programok csak 0-100 közötti értéket engednek meg komponensenként, ez 100 millió színárnyalatot eredményez
+		\end{itemize}
+		
+		\begin{figure}
+			\centering
+				\includegraphics[height=0.25\textheight]{images/cmyk.png}
+			\label{fig:cmyk}
+		\end{figure}
+		\framebreak
+		
+		\item CMY színrendszer
+		
+		\begin{itemize}
+			\item ugyanaz, mint a CMYK, csak fekete nélkül
+			\item a fekete nem keverhetõ ki, csak sötétbarba
+			\item szubtraktív rendszer $\Rightarrow$ minden: fekete, semmi: fehér
+			\item ezt használják egyes tintasugaras nyomtatók, a fekete külön patron
+			\item az RGB--CMY átalakítás egy vektormûvelettel egyszerûen megfogalmazható:
+			$$
+			\left[
+			\begin{array}{c}
+			C\\
+			M\\
+			Y\\
+			\end{array}
+			\right]
+			=
+			\left[
+			\begin{array}{c}
+			1\\
+			1\\
+			1\\
+			\end{array}
+			\right]
+			-
+			\left[
+			\begin{array}{c}
+			R\\
+			G\\
+			B\\
+			\end{array}
+			\right]
+			$$
+
+		\end{itemize}
+		
+		\framebreak
+
+		\item HSB színrendszer
+		
+		\begin{itemize}
+			\item három komponens:  Hue -- színárnyalat, Saturation -- telítettség, Brightness -- fényesség
+			\item a színárnyalat egy színt választ ki a színkeréken 0 és 359 között
+			\item a telítettség és a fényesség megadása százalékban történik
+			\item a telítettség jelentése: mennyire  keskeny  sávot  határoz  meg  a  színkerékbõl. Nagyobb   érték   esetén   a   megadott   szín   távolabbi 
+szomszédai  is  részt  vesznek  a  szín  kikeverésében,  a szín  pasztell, majd  szürkés  árnyalatú  lesz.  A  szín  a telítettség minimális értéke esetén ,,tiszta'' lesz.
+		\end{itemize}
+				
+		\begin{figure}
+			\centering
+				\includegraphics[height=0.25\textheight]{images/szinkerek_alap.jpg}
+			\label{fig:szinkerek_alap}
+		\end{figure}
+		\framebreak
+		
+		\item Színkerék modell tiszta színekkel
+		
+		\begin{itemize}
+			\item a kerék peremén szerepelnek a színek
+			\item egy egyenlõ oldalú háromszög csúcsaiban a tiszta színek: (kék, sárga, piros)
+			\item velük átellenben a másodlagos színek (narancs, zöld, lila)
+			\item két tetszõleges szín között a két színnel való keverés árnyalatai szerepelnek, félúton a két adott szín egyenlõ arányú keverésével kapott szín
+			\item a színek sorrendje adja a szivárvány színsorrendjét
+		\end{itemize}
+				
+		\begin{figure}
+			\centering
+				\includegraphics[height=0.25\textheight]{images/szinkerek_tiszta.jpg}
+			\label{fig:szinkerek_tiszta}
+		\end{figure}
+		\framebreak
+		
+		\item Színkerék modell alap színekkel (RGB)
+		
+		\begin{itemize}
+			\item a színkerék egy sugarán haladva az adott szín telítettsége változik
+			\item a színkerék kerületén a tiszta színek találhatóak, a belsejében a pasztell színek
+			\item ahogy ezen a sugáron a színkerék kerületétõl a középpont felé haladunk, az eredeti (kerületen lévõ) szín egyre nagyobb környezetébõl keverednek össze a színek és ez a keveredés adja a sugár adott helyén lévõ színárnyalatot. Maga a szín nem változik a sugár vonalában (mivel a kerületen lévõ szín jobb és bal oldaláról azonos mértékben adódnak a bekeveredõ színek és ezek a színek párosíthatóak egymással, a párok összege viszont az eredeti színt adja)
+			\item a sugár belseje felé haladva a szín veszít a telítettségébõl
+			\item minden ilyen sugár esetében a színkerék középpontjához érve a fehér színt kapjuk, mivel ekkor már az eredeti szín bõvülõ környezete eléri a színkerék teljes kerületét, az additív színek összessége viszont fehér színt eredményez.
+		\end{itemize}
+				
+		\begin{figure}
+			\centering
+				\includegraphics[height=0.40\textheight]{images/szinkerek_alap.jpg}
+			\label{fig:szinkerek_alap2}
+		\end{figure}
+		
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Színkezelés a dokumentumkezelõ programokban}
+	
+	\begin{itemize}
+		\item A különbözõ dokumentumkezelõ programok (nem csak a grafikus alkalmazások) az elõbbi módszerek közül használnak egyet, vagy többet a színek kezelésére
+		\item Ezeken az alapelveken alapszanak a programok színkezelõ ûrlapjai
+		\item Ezért hasznos ismerni ezeket az elveket
+		\item A felhasználó által beállított színeket azután a kiválasztott fájlformátum szabályai szerint tárolja el, szükség szerint konvertálva azokat
+		\item Figyeljünk ezekre a konverziókra, és nem csak a színek tekintetében!
+		\framebreak
+		\item Például 
+		
+		\begin{enumerate}
+			\item kiválasztunk egy színt a programban az RGB színkerékrõl
+			\item elmentjük a képet GIF formátumban
+			\item a GIF formátum csak 256 színt enged meg
+		\end{enumerate}
+				
+	\end{itemize}
+		
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[height=0.50\textheight]{images/szinkerek_alap.jpg}
+			\includegraphics[height=0.50\textheight]{images/szinkerek_alap_GIF.jpg}
+		\label{fig:szinkerek_alap_3}
+	\end{figure}
+		
+\end{frame}
+
+\begin{frame}{HTML színpaletták}
+	
+	\begin{itemize}
+		\item Példaképpen nézzük meg a böngészõprogramok által támogatott színpalettákat:
+	\end{itemize}
+		
+	\begin{table}
+		\centering
+			\begin{tabular}{ccc}
+				
+				\includegraphics[height=0.20\textheight]{images/html-color-palette-81.png} &
+				\includegraphics[height=0.20\textheight]{images/html-color-palette-216.png} &
+				\includegraphics[height=0.20\textheight]{images/html-color-palette-1536.png}
+				\\
+				81 elemû paletta &
+				216 elemû paletta &
+				1536 elemû paletta
+				\\
+				\scriptsize{html-color-palette-81.png} &
+				\scriptsize{html-color-palette-216.png} &
+				\scriptsize{html-color-palette-1536.png}
+				\\
+			\end{tabular}
+	\end{table}
+
+	\begin{itemize}
+		\item minden kép megtalálható a PDF fájlban csatolmányként is, így nagy méretben is tanulmányozhatók
+		\item lásd Attachments (Csatolmányok) funkció a PDF olvasó programban!
+	\end{itemize}
+	
+\end{frame}
+
+\subsection{Konverziók}
+\label{sec:Konverziok}
+
+\begin{frame}{Konverziók a raszter- és a vektorgrafika között}
+	
+	\begin{enumerate}
+		\item Vektorgrafika $\rightarrow$ Rasztergrafika
+		
+		\begin{itemize}
+			\item ez a gyakoribb és egyszerûbb eset
+			\item majdnem mindig megtörténik, amikor egy program megjelenít egy vektorgrafikus ábrát
+			\item a megadott sorrendben és szabályok szerint sorban ki kell rajzolni az objektumokat
+		\end{itemize}
+		
+		\item Rasztergrafika $\rightarrow$ Vektorgrafika
+		
+		\begin{itemize}
+			\item ez sokkal ritkább és nehezebb
+			\item mesterséges intelligenciát igényel, hogy a pixelgrafikus ábrában felismerjük az összetartozó pixeleket
+			\item speciális eset az optikai karakterfelismerés (OCR), a felismerendõ objektumok egy elõre meghatározott készletbõl kerülnek ki, az ábécé betûi lehetnek
+		\end{itemize}
+		
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}{Visio házi feladat}
+	
+	\begin{itemize}
+		\item Egy raszter $\rightarrow$ vektor konverzió elvégzése kézzel
+	\end{itemize}
+		
+	\begin{figure}
+		\centering
+			\includegraphics[height=0.40\textheight]{images/hf_raszter.jpg}
+		\label{fig:hf_raszter}
+	\end{figure}
+		
+	\begin{center}
+	\LARGE{$\Downarrow$}
+	\end{center}
+		
+	\begin{center}
+		téglalapok, vonalak, nyílak, szövegek, \dots \\
+		kapcsolatok!!!
+\end{center}
+	
+\end{frame}
+
+\begin{frame}{Speciális eszközök a vektorgrafikus programokban (Pl. Visio)}
+	
+	\begin{itemize}
+		\item egymástól független objektumok
+		\item objektumok kombinációja
+		\item csoportbafoglalás, rekurzívan
+		\item rétegtechnika, layer (ez megvan a jobb pixelgrafikus programokban is)
+		\item segédháló, rács
+		\item segédvonal, vonalzó
+		\item objektumok illesztése egymáshoz, rácshoz, segédvonalhoz
+		\item kész, módosítható objektumok, clipart
+		\item illesztõ pontok, vonalak, nyílak illesztésére
+		\item geometriai szerkesztõ eszközök (CAD programok)
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Konverziók a fájlformátumok között}
+	
+	\begin{itemize}
+		\item Miért fontos a konverzió?
+		\item A különbözõ fájlformátumok eltérõ lehetõségekkel, szabályokkal, és korlátokkal rendelkeznek
+		\item Ezek között vannak áthidalható, áthidalhatatlan és részben áthidalható ellentétek
+		\item A konverzió speciális esete a tömörítés és a kódolás
+		\item Különbözõ konverziók lehetségesek:
+		
+		\begin{itemize}
+			\item megfordítható $\Leftrightarrow$ nem megfordítható
+			\item veszteséges $\Leftrightarrow$ veszteségmentes
+			\item minõségtartó, minõségcsökkentõ, minõségjavító
+		\end{itemize}
+		
+		\item Fájlformátumok adatbázisa: http://www.wotsit.org/
+	\end{itemize}
+	
+\end{frame}
+
+\section{Verziókezelés}
+\label{sec:Verziokezeles}
+
+\begin{frame}{Verziókezelés}
+	
+	Mirõl van szó?
+	
+	\begin{itemize}
+		\item különbözõ verziók, változatok születnek egyes dokumentumokból
+		\item egy ember hosszabb ideig dolgozik rajta
+		\item több ember dolgozik rajta egy idõben, vagy egymás után
+		\item sokszor hasznos lenne, ha
+		
+		\begin{itemize}
+			\item elõ tudnánk venni egy korábbi verziót
+			\item elõ tudnánk venni valamelyik munkatárs által készített verziót
+			\item össze tudnánk hasonlítani különbözõ verziókat
+		\end{itemize}
+		
+		\item ezeket az igényeket tudják kielégíteni a verziókezelõ programok (Revision vagy Version Control System, RCS, VCS)
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{A munkafolyamat}
+	
+	\begin{itemize}
+		\item elkészítem a dokumentum elsõ változatát
+		\item átadom a verziókezelõ programnak (Check-in)
+		\item a rendszer elteszi az adatbázisába (1.0 verzió)
+		\item Ha legközelebb módosítani akarom a dokumentumot:
+		\begin{itemize}
+			\item a verziókezelõ programtól elkérem a dokumentum aktuális, vagy bármelyik korábbi verzióját (Check-out)
+			\item módosítom a kapott dokumentumot
+			\item az adatbázisban foglalttá, módosítottá (Modified) válik
+			\item visszaadom a dokumentumkezelõ programnak (Check-in)
+			\item a rendszer elteszi az adatbázisba, növeli a verziószámot, de megõrzi az elõzõ verziót is
+			\item minden változathoz megjegyzések és további információk fûzhetõk
+			\item mindez mûködik több felhasználó esetén is
+		\end{itemize}
+		\item Például: CS-RCS, Subversion, Git, Visual SourceSafe, GNU Arch, \dots
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Befejezés}
+
+\begin{block} {}
+	
+	\begin{center}
+	\vspace{1cm}
+	\LARGE{Köszönöm a figyelmet!}
+	\vspace{1cm}
+	\end{center}
+	
+\end{block}
+
+\end{frame}
+
+\end{document}

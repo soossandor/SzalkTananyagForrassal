@@ -1,0 +1,1065 @@
+% $Header: /cvsroot/latex-beamer/latex-beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 1.7 2007/01/28 20:48:23 tantau Exp $
+
+% Version for PROJECTOR (Vetíthetõ változat)
+% Uncomment the next line (A vetíthetõ változathoz vedd ki a % jelet a következõ sor elejérõl)
+%\documentclass{beamer}
+% End of version for PROJECTOR (A vetíthetõ változat vége)
+
+% PRINTABLE version (Nyomtatható változat):
+% Uncomment the next two lines (vedd ki a % jelet a következõ 2 sor elejérõl)
+%\documentclass{article}
+%\usepackage{beamerarticle}
+% End of PRINTABLE version (A nyomtatott változat beállításának vége)
+
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  % or ...
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+% Magyar szöveg
+\usepackage[magyar]{babel}		% a Babel csomagot a magyar nyelvvel használjuk
+\usepackage[latin2]{inputenc}		% Latin-2-es kódolású ez a forrás
+\usepackage{t1enc}			% a belsõ ábrázolás és a kimeneti font-kódolás
+					% a T1 kódolás
+\usepackage{indentfirst}		% az elsõ bekezdés is behúzott legyen, ne csak a 2-tól
+\frenchspacing				% a mondatköz ugyanakkora nagy, mint a szóköz
+\setlength{\parskip}{\smallskipamount}	% bekezdések közötti távolság beállítása
+					% (gumi-méret: 3pt plus 1pt minus 1 pt)
+% Magyar szöveg vége
+
+
+% Angol szöveg
+%\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+% Angol szöveg vége
+
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\def\screenshotsize{0.70}
+\def\screenshotsizeB{0.50}
+\def\maintitle{Számítógépes alkalmazások\\Hardver--Szoftver--Hálózat}
+\def\shorttitle{SZALK - HW--SW--Net}
+\def\longdate{Sopron, 2015.}
+\def\shortdate{2015}
+
+%packages to use
+\usepackage{graphicx}
+\usepackage{fancybox} 
+\usepackage{multicol}
+
+\only<beamer>{
+%Insert frame number to footline
+%Tested with the next themes: Warsaw, Berlin, Szeged, ...
+\newcommand*\oldmacro{}%
+\let\oldmacro\insertshorttitle%
+\renewcommand*\insertshorttitle{%
+  \oldmacro\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+%End of frame number to footline
+}
+
+\title[\shorttitle] % (optional, use only with long paper titles)
+{\maintitle}
+
+\author[Soós Sándor] % (optional, use only with lots of authors)
+{Soós Sándor}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[NYME SKK INGA] % (optional, but mostly needed)
+{
+%  \inst{1}%
+  Nyugat-magyarországi Egyetem\\
+  Simonyi Károly Mûszaki, Faanyagtudományi és Mûvészeti Kar\\
+  Informatikai és Gazdasági Intézet\\
+  \vspace{0.3cm}
+  E-mail: soossandor@inf.nyme.hu
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[\shortdate] % (optional, should be abbreviation of conference name)
+{\longdate}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+
+\only<article>{
+\begin{titlepage}
+
+\begin{center}
+
+%\vspace*{1cm}
+\Large
+\textsc{\maintitle}\\
+
+\vspace{5cm}
+
+%\LARGE
+\textsc{Soós Sándor}\\
+
+\vspace{5cm}
+%\textsc{\today}\\ %%Date - better you write it yourself.
+\textsc{\longdate}\\
+
+\end{center}
+
+\end{titlepage}
+}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+\only<beamer>{
+\pgfdeclareimage[height=1cm]{university-logo}{images/nyme_skk}
+\logo{\pgfuseimage{university-logo}}
+}
+
+%\only<beamer>{\subject{Practical Computer Science}}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+\only<beamer>{
+\begin{frame}{}
+  \titlepage
+\end{frame}
+}
+
+\begin{frame}{Tartalomjegyzék}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Mirõl lesz szó a mai órán?}
+
+\begin{itemize}
+	\item A hardver és szoftver rendszer modellje
+	\item A szoftver összetevõi, a szoftverfejlesztés fázisai
+	\item A gépi kódú és az assembly programozás lényege
+	\item Magas szintû programnyelvek csoportosítása
+	\item A szintaktika és a szemantika fogalma
+	\item Az operációs rendszer és rendszer-közeli szoftver
+	\item Az ismert operációs rendszerek jellemzõi
+	\item Az operációs rendszer csatlakozási és kezelõi felülete
+	\item A felhasználók csoportosítása és jellemzõik
+	\item Virtualizáció
+	\item Számítógépek összekapcsolása
+	\item A hálózatok elõnyei, jellemzõ topológiák
+	\item Hálózatok osztályozása
+	\item Hálózati topológiák
+	\item Hálózatok mûködése, alapszolgáltatások
+	\item A hálózatok ISO-OSI modellje
+	\item Gyakori hálózati szolgáltatások
+	\item Az intranet fogalma
+\end{itemize}
+
+\end{frame}
+
+
+\section{Hardver-Szoftver}
+\label{sec:HardverSzoftver}
+
+
+\subsection{A számítógép hardver-szoftver felépítése}
+\label{sec:ASzamitogepHardverSzoftverFelepitese}
+
+\begin{frame}{A számítógép hardver-szoftver felépítése}
+	
+	\begin{table}
+		\centering
+			\begin{tabular}{|c|}
+				\hline
+				Felhasználói Interfész \\
+				\hline
+				Alkalmazói Programrendszer \\
+				\hline
+				Alkalmazói Programinterfész \\
+				\hline
+				Adatbázis kezelõ rendszer \\
+				\hline
+				Operációs rendszer interfész \\
+				\hline
+				Operációs rendszer \\
+				\hline
+				Hardver interfész \\
+				\hline
+				Hardver \\
+				\hline	
+			\end{tabular}
+	\end{table}
+	
+	
+	\begin{itemize}
+		\item A múlt órán beszéltünk a hardverrõl
+		\item Most következik a szoftver
+	\end{itemize}
+	
+\end{frame}
+
+
+\subsection{A szoftver}
+\label{sec:ASzoftver}
+
+\begin{frame}{A szoftver}
+	
+	\begin{itemize}
+		\item Mi a különbség a program és a szoftver között? \pause
+		\item Mibõl áll a szoftver? \pause
+		
+		\begin{itemize}
+			\item programmodulok
+			\item rendszerdokumentáció, fejlesztõi dokumentáció
+			\item konfigurációs adatok, és ezeket tároló fájlok
+			\item felhasználói dokumentáció
+			\item a szoftver bevezetését és használatát támogató eszközök: weblap, fórum, oktatóanyagok, demók, stb.
+		\end{itemize}
+		
+		\item Ezt mindig figyelembe kell venni, ha szoftvert készítünk, vagy vásárolunk
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{A szoftverfejlesztés fázisai}
+	
+	\begin{enumerate}
+		\item szoftverspecifikáció (Mit csináljon a szoftver?)
+		\item szoftvertervezés (A rendszer megtervezése)
+		\item implementáció (A programkód elõállítása)
+		\item tesztelés, validáció (A program helyességének ellenõrzése, bizonyítása)
+		\item szoftverevolúció (üzemeltetés, továbbfejlesztés)
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}{A programozás szintjei}
+	
+	\begin{itemize}
+		\item gépi kódú programozás (\textit{bitek})
+		\item assembly programozás (szimbolikus kódok, \textit{mnemonik})
+		
+		\begin{itemize}
+			\item assembly nyelv: a programozási nyelv
+			\item assembler: az assembly nyelvû fordító program \\
+			assembly nyelvû forráskód $\Rightarrow$ gépi kód
+		\end{itemize}
+		
+		\item magasszintû programozási nyelvek (\textit{,,mondatok''})
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{A programozás szintjei -- Példa}
+	
+	\begin{table}
+		\centering
+			\begin{tabular}{|r|c|c|c|}
+				\hline
+				gépi kód: & 10011100 & 0000101000110000 & 0000101000110001 \\ \hline
+				assembly: & ADD & adat1 & adat2 \\ \hline
+				Pascal: & \multicolumn{3}{c|}{adat1 := adat1 + adat2;} \\ \hline
+				C: & \multicolumn{3}{c|}{adat1 = adat1 + adat2;} \\ \hline
+				Basic: & \multicolumn{3}{c|}{LET adat1 = adat1 + adat2} \\ \hline
+				Java: & \multicolumn{3}{c|}{adat1 = adat1 + adat2;} \\ \hline
+			\end{tabular}
+	\end{table}
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Magasszintû programnyelvek}
+	
+	\begin{itemize}
+		\item Imperatív (procedurális) programnyelvek
+		
+		\begin{itemize}
+			\item a programozónak le kell írnia a végrehajtandó algoritmust
+			
+			\begin{itemize}
+				\item FORTRAN -- 1954
+				\item ALGOL 60 -- 1960
+				\item COBOL -- 1959
+				\item BASIC -- 1964
+				\item PASCAL -- 1968
+				\item C -- 1974
+			\end{itemize}
+			
+		\end{itemize}
+		
+%		\framebreak
+		
+		\item Funkcionális (logikai) programnyelvek
+		
+		\begin{itemize}
+			\item nem a megoldást írja le a programozó, hanem a feladat logikai/matematika modelljét, a kielégítendõ szabályokat
+			\item ezek után a feltett kérdésekre automatikusan tud válaszolni a program
+			
+			\begin{itemize}
+				\item Prolog
+				\item LISP
+				
+			\end{itemize}
+			
+		\end{itemize}
+		
+		\framebreak
+		
+		\item Szimulációs nyelvek
+		
+		\begin{itemize}
+			\item a feladat statisztikai modelljébõl kiindulva kísérletezi ki a megoldást
+			
+			\begin{itemize}
+				\item GPSS
+				\item Simula 67
+				\item TUTSIM
+				\item ASYST
+				
+			\end{itemize}
+			
+		\end{itemize}
+		
+		\item Grafikus programozást biztosító nyelvek
+		
+		\begin{itemize}
+			\item két- és háromdimenziós ábrák elõállításához szükséges paraméterezhetõ rajzelemek az elemi utasítások
+			
+			\begin{itemize}
+				\item LabVIEW
+				\item VisSim
+				
+			\end{itemize}
+			
+		\end{itemize}
+	
+		\framebreak
+		
+		\item Adatbázis-kezelõ nyelvek
+		
+		\begin{itemize}
+			\item az adatbázis-kezelõ szerverek programozását lehetõvé tevõ nyelvek
+			
+			\begin{itemize}
+				\item SQL
+				\item Progress
+				
+			\end{itemize}
+			
+		\end{itemize}
+	
+		\item Objektum alapú és objektum-orientált nyelvek
+		
+		\begin{itemize}
+			\item a feladat modelljét objektumokkal, ezek kapcsolataival és a hozzájuk köthetõ eseményekkel írják le
+			
+			\begin{itemize}
+				\item Smalltalk
+				\item Eiffel
+				\item C$++$
+				\item Java
+				\item Delphi (Object Pascal)
+				\item C$\#$
+				
+			\end{itemize}
+			
+		\end{itemize}
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{A programozási nyelvek definiálása}
+	
+	\begin{itemize}
+		\item A számítógéppel való kommunikációhoz teljesen egyértelmûen kell definiálni a szabályokat
+		\item A programozási nyelveket két szinten definiáljuk:
+				
+		\begin{enumerate}
+			\item Szintaktika, szintaxis
+			
+			\begin{itemize}
+				\item nyelvtani szabályok
+				\item megmondja, hogy melyek a helyes programok
+				\item a fordítóprogram el tudja dönteni, hogy melyek a szintaktikailag helyes programok, hiba esetén jelzi ezeket
+			\end{itemize}
+			
+			\item Szemantika
+			
+			\begin{itemize}
+				\item jelentés, tartalom
+				\item meghatározza, hogy a szintaktikailag helyes programok mit jelentenek
+				\item szemantikai hiba esetén nem kapunk hibaüzenetet, de a program nem azt csinálja, amit várunk tõle
+			\end{itemize}
+			
+		\end{enumerate}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\subsection{Operációs rendszer}
+\label{sec:OperációsRendszer}
+
+\begin{frame}{Operációs rendszer és rendszerközeli szoftverek}
+	
+	\begin{itemize}
+		\item \textbf{operációs rendszer}nek (rendszerszoftvernek) nevezzük azoknak a gyári programoknak az összességét, mely a számítógépes eszközök és a hálózat mûködését, az erõforrások elosztását és igénybevételét vezérlik (pl: DOS, UNIX, WINDOWS..., NOVELL NETWARE, Mac OS, stb.)
+		\item \textbf{rendszerközeli szoftver}nek nevezzük azoknak a gyári programoknak összességét, melyek általános és gyakran szükséges szolgáltatásokkal az operációs rendszerhez tartozó programokat kiegészítik (pl. Total Commander)
+		\item nincs éles határ a két kategória között
+		\item Miért nevezzük operációs rendszernek?
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Operációs rendszerek}
+
+\emph{A számítógép alapmûködését, az erõforrásaival optimálisan történõ gazdálkodást a felhasználás céljától függetlenül biztosító, általános programok együttese az operációs rendszer
+}
+%Legelterjedtebb típusai:
+\begin{itemize}
+	\item \textbf{MS-DOS} (Disk Operating System, 1981-): egyfeladatos, egyfelhasználós (single user, single tasking), assemblyben írták, parancsnyelv bázisú, interpreteres (a kapott utasítást azonnal végrehajtja, ha nem hibás a parancs)
+	\item \textbf{Windows} (1985-): eredetileg egyfelhasználós, többfeladatos (multitasking), újabb változatai (XP) már többfelhasználósak (multiuser) assembly-ben és C-ben írták, grafikus bázisú (ikonok, menü, egér, \dots)
+	\item \textbf{UNIX} (1973-): többfelhasználós, többfeladatos, C-ben írták, nyílt (nyilvános) forráskódú, parancsnyelv bázisú; a PC-ktõl a nagyszámítógépekig használt operációs rendszer.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Az operációs rendszer környezete}
+	
+	\begin{itemize}
+		\item Három csatlakozási felületet kell megvalósítani (OS $=$ Operating Sytem):
+	
+			\begin{enumerate}
+				\item OS -- Felhasználók (kezelõk)
+				\item OS -- Alkalmazások (programok)
+				\item OS -- Hardver
+			\end{enumerate}
+	
+		\item Fõ feladata virtuális gép(ek) megvalósítása és mûködtetése
+		\item Mit nevezünk virtuális gépnek?
+
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{OS -- Felhasználók -- Felhasználói felület}
+	
+	\begin{itemize}
+		\item Ember -- gép kapcsolat
+		
+		\begin{itemize}
+			\item tájékoztatni kell a felhasználót a gép mûködésérõl
+			\item lehetõvé kell tenni a beavatkozást
+		\end{itemize}
+		
+		\item Kezelni kell az ehhez szükséges eszközöket
+		
+		\begin{itemize}
+			\item képernyõ, billentyûzet, egér, hangeszközök, egyéb be-kimeneti eszközök
+		\end{itemize}
+		
+		\item A felhasználók nem egyformák:
+		
+		\begin{itemize}
+			\item ,,egyszerû'' felhasználók
+			\item alkalmazás fejlesztõk, programozók
+			\item rendszermenedzserek, rendszergazdák
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Kezelõi felület / Egyszerû felhasználók}
+	
+	\begin{itemize}
+		\item elsõsorban programokat futtatnak, a felhasználói programokkal kerülnek kapcsolatba, az operációs rendszerrel kevésbé
+		\item a legfontosabb operációs rendszer szolgáltatás számukra a fájlrendszer
+		\item bizonyos megbízhatóságot, biztonságot elvárnak, cserébe hajlandók bizonyos szabályokat követni, pl. bejelentkezés, jogosultságok, stb.
+		\item számukra az operációs rendszer lehetõséget ad programok és adatok tárolására, használatára
+		\framebreak
+		\item az egyszerû felhasználók számára a legfontosabb operációs rendszer szolgáltatások:
+		
+		\begin{itemize}
+			\item bejelentkezés
+			\item fájlok, adatok kezelése
+			\item programok áttekintése
+			\item programok futtatása
+			\item programok párhuzamos futtatása
+			\item programok leállítása (kilövése)
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Kezelõi felület / Alkalmazásfejlesztõk}
+	
+	\begin{itemize}
+		\item természetesen a programozók egyben ,,egyszerû'' felhasználók is, de ezen felül\dots
+		\item elsõsorban programokat írnak, tesztelnek, elemeznek
+		\item az operációs rendszer programozói felületét ismerik, bizonyos mértékig a belsõ mûködését is
+		\item többnyire speciális fejlesztõi környezeteket használnak
+		\item szükségük van az operációs rendszer szolgáltatásaira ahhoz, hogy adatokat, statisztikákat kapjanak a rendszer állapotáról (memória, erõforrások kihasználtsága, stb.)
+%		\framebreak
+		\item az alkalmazásfejlesztõk számára a legfontosabb operációs rendszer szolgáltatások:
+		
+		\begin{itemize}
+			\item API-k (Application Programming Interface) a különbözõ rendszer erõforrások programozásához
+			\item programok futtatása különbözõ módokon (debug)
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Kezelõi felület / Rendszermenedzserek}
+	
+	\begin{itemize}
+		\item természetesen a rendszermenedzserek egyben ,,egyszerû'' felhasználók is, de ezen felül\dots
+		\item Feladataik:
+		
+		\begin{itemize}
+			\item az operációs rendszer telepítése, konfigurálása
+			\item Adminisztráció: felhasználók, jogosultságok, más erõforrások
+			\item Hangolás: a rendszer teljesítményét befolyásoló paraméterek figyelése és beállítása
+			\item Felügyelet: hibák észlelése, elhárítása, log fájlok ellenõrzése, kezelése
+			\item Biztonsági mentések rendszeres készítése
+		\end{itemize}
+		
+		\item részletesen ismerik a rendszert
+		\item olyan eszközökre van szükségük, amelyekre a többi felhasználónak nincs szüksége és õk nem is érhetik el azokat
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Különbözõ felhasználói felületek}
+	
+	\begin{itemize}
+		\item A felhasználók különbözõ csoportokba tartozhatnak (egyszerû felhasználó, programozó, rendszergazda)
+		\item Egy felhasználó több csoportba is tartozhat
+		\item A felhasználók felkészültsége, tapasztalata is nagyon eltérõ lehet
+		\item Ugyanaz a felhasználó is többféle felületet igényel az eltérõ feladatokhoz
+		\item Akkor milyen a jó felhasználói felület?
+		
+		\begin{itemize}
+			\item sokféle
+			\item jól paraméterezhetõ
+			\item karakteres-grafikus
+		\end{itemize}
+		
+		\item Melyik operációs rendszer tudja mindezt?
+		\item Biztos, hogy egyetlen operációs rendszert kell használnunk?
+		\item Hogyan használhatunk több operációs rendszert egy számítógépen?
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Virtualizáció}
+	
+	\begin{itemize}
+		\item Napjainkban az informatika talán leggyakrabban emlegetett fogalma, technológiája
+		\item Nagyon sokféle dolgot értünk alatta
+		\item \textit{,,A virtualizáció számítástechnikai kifejezés, számítógépi erõforrások különbözõ absztrakcióinak gyûjtõneve''}
+		\item Mit lehet virtualizálni egy számítógépben?
+		
+		\begin{itemize}
+			\item egyes hardvereszközöket:
+			
+			\begin{itemize}
+				\item virtuális memória
+				\item virtuális nyomtató
+				\item tároló virtualizáció, virtuális kötetek, fájlrendszerek
+			\end{itemize}
+			
+			\item egy teljes számítógépet:
+			
+			\begin{itemize}
+				\item szervervirtualizáció - virtuális szerver
+				\item desktop virtualizáció - virtuális munkaállomás, operációs rendszer
+			\end{itemize}
+			
+		\end{itemize}
+		
+		\item Cloud Computing (errõl külön fogunk beszélni)
+		
+	\end{itemize}
+	
+\end{frame}
+
+
+\section{Hálózatok}
+\label{sec:Halozatok}
+
+\subsection{A hálózatok elõnyei}
+\label{sec:AHalozatokElonyei}
+
+\begin{frame}{A hálózatok elõnyei}
+	
+	\begin{itemize}
+		\item Erõforrások megosztása, közös használata\pause
+
+		\begin{itemize}
+			\item Milyen erõforrásokat oszthatunk meg?\pause
+				
+				\begin{itemize}
+					\item nyomtató, plotter, szkenner, \dots
+					\item háttértárak
+					\item processzor
+					\item hálózat
+					\item alkalmazások
+					\item adatok, adatbázisok
+				\end{itemize}
+
+			\item Ezáltal csökkentjük a rendszerben lévõ redundanciát!
+		\end{itemize}
+		
+		\item Erõforrások többszörözése, biztonság
+		
+		\begin{itemize}
+			\item háttértárak, RAID
+			\item hálózat
+			\item adatok, adatbázisok
+			\item Ez növeli a redundanciát
+		\end{itemize}
+		
+		\item Kommunikáció, online szolgáltatások elérése
+		
+	\end{itemize}
+	
+\end{frame}
+
+\subsection{Hálózatok osztályozása}
+\label{sec:HalozatokOsztalyozasa}
+
+\begin{frame}{Hálózatok osztályozása méret szerint}
+	
+	\begin{itemize}
+		\item LAN (Local Area Network / Helyi Hálózat) 
+		
+		\begin{itemize}
+			\item kis kiterjedésû, épületen belül
+			\item nagy sebességû: 10-100 Mbps (megabit per mp)
+		\end{itemize}
+		
+		\item MAN (Metropolitan Area Network / Nagyvárosi Hálózat)
+		
+		\begin{itemize}
+			\item nagyobb kiterjedésû, két telephely között, egy városon belül
+			\item sebessége általában kisebb, mint a LAN esetében
+			\item tipikusan LAN hálózatokat kapcsol össze
+		\end{itemize}
+		
+		\item WAN (Wide Area Network / Nagy Kiterjedésû Hálózat)
+		
+		\begin{itemize}
+			\item nagy kiterjedésû, városok közötti, országokat, kontinenseket átívelõ
+		\end{itemize}
+		
+	\end{itemize}
+	
+	Ez a hagyományos felosztás, ma már csak nagyon speciális esetekben van értelme saját MAN, vagy WAN hálózatot építeni az Internet használata helyett.
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Hálózati topológiák}
+	
+	\def\keparany{0.3}
+	
+	\begin{enumerate}
+		\item Bus (sín) topológia
+		
+		\begin{figure}
+			\centering
+				\includegraphics[height=\keparany\textheight]{images/busz_top.png}
+			\label{fig:busz_top}
+		\end{figure}
+		
+		\begin{itemize}
+			\item minden eszköz egy közös bus-ra csatlakozik
+			\item minden eszköznek van egy egyedi címe, a csomagot ezzel címezzük meg
+			\item minden eszköz megkap minden csomagot, kiválasztja a neki szólót
+			\item speciális lezáró elem kell a kábel végére, hogy ne verõdjenek vissza a csomagok
+			\item ha bárhol megsérül a kábel, az egész hálózat leáll
+		\end{itemize}
+
+		\framebreak
+		
+		\item Csillag topológia
+		
+		\begin{figure}
+			\centering
+				\includegraphics[height=\keparany\textheight]{images/csillag_top.png}
+			\label{fig:csillag_top}
+		\end{figure}
+		
+		\begin{itemize}
+			\item minden eszköz közvetlenül a központban lévõ szerverrel van összekapcsolva
+			\item ha egy kábel megsérül, az csak egy munkaállomást érint
+			\item a központ meghibásodásakor a teljes hálózat leáll
+		\end{itemize}
+		
+		\framebreak
+		
+		\item Gyûrû topológia
+		
+		\begin{figure}
+			\centering
+				\includegraphics[height=\keparany\textheight]{images/gyuru_top.png}
+			\label{fig:gyuru_top}
+		\end{figure}
+		
+		\begin{itemize}
+			\item minden eszköz két szomszéddal áll kapcsolatban, a gyûrûnek nincsen végpontja
+			\item a csomagok egy irányban haladnak körbe a gyûrben, amíg el nem érik a címzettet
+			\item ha egy helyen megsérül a kábel, akkor a teljes hálózat leáll
+		\end{itemize}
+		
+		\framebreak
+		
+		\item Fa topológia
+		
+		\begin{figure}
+			\centering
+				\includegraphics[height=\keparany\textheight]{images/fa_top.png}
+			\label{fig:fa_top}
+		\end{figure}
+		
+		\begin{itemize}
+			\item az eszközök fastruktúrában vannak rendezve
+			\item az egyes ágakat alhálózatoknak nevezzük
+			\item aktív eszközök irányítják a csomagokat
+			\item nagy hálózatok is kialakíthatók hatékonyan
+			\item ha megsérül egy kábel, egy egész alhálózat elérhetetlenné válik
+		\end{itemize}
+		
+	\end{enumerate}
+	
+\end{frame}
+
+\subsection{Hálózatok mûködése}
+\label{sec:HalozatokMukodese}
+
+\begin{frame}{Hálózati címek, IP-címek}
+	
+	\begin{itemize}
+		\item A különbözõ hálózati rendszerek eltérõ kommunikációs és azonosítási módokat használtak
+		\item Mára szinte teljesen egyeduralkodóvá vált az Internet Protocol (IP) használata
+		\item Minden Internet Protocol segítségével kommunikáló eszközt egy egyedi IP-cím azonosít
+		\item Kétféle IP-cím szabvány:
+		
+		\begin{itemize}
+			\item IPv4
+			
+			\begin{itemize}
+				\item 32 bites egész szám, 4 darab (0-255 közötti) szám pontokkal elválasztva
+				\item 4 milliárd lehetséges IP-cím
+			\end{itemize}
+			
+			\item IPv6
+			
+			\begin{itemize}
+				\item 128 bites egész szám, 8 darab 16 bites szám kettõspontokkal elválasztva, tizenhatos számrendszerben (hexa)
+				\item Hány lehetséges IP-cím van? $2^{128} = 3,2\times10^{38}$
+			\end{itemize}
+			
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{IPv4 ,,régi'' típusú IP-címek}
+	
+	\begin{itemize}
+		\item A 4 milliárd IP cím bõségesen elegendõnek tûnt, mára azonban elfogyóban vannak
+		\item Nem adunk minden eszköznek önálló IP-címet:
+	\end{itemize}
+	
+	
+	\scriptsize{
+	\begin{table}
+		\centering
+			\begin{tabular}{|c|c|c|c|}
+			\hline
+			Privát IP címtartományok & Tartomány kezdete & Tartomány vége & Címek száma \\ \hline
+			24 bites tömb (/8 prefix) & 10.0.0.0 & 10.255.255.255 & 16 777 216 \\ \hline
+			20 bites tömb (/12 prefix) & 172.16.0.0 & 172.31.255.255 & 1 048 576 \\ \hline
+			16 bites tömb (/16 prefix) & 192.168.0.0 & 192.168.255.255 & 65 536 \\ \hline
+			\end{tabular}
+	\end{table}
+	}
+
+\end{frame}
+
+\begin{frame}{IPv6 ,,új'' típusú IP-címek}
+	
+	\begin{itemize}
+		\item 1994-ben vált szabvánnyá
+		\item Gyakorlatilag korlátlan címtartomány
+		\item Minden elképzelhetõ eszköz egyedi IP-címet kaphat
+		\item A két rendszer párhuzamosan élhet egymás mellett
+		\item Példák IPv6 címekre:
+		
+		\begin{itemize}
+			\item fe80:0000:0000:0000:0202:b3ff:fe1e:8329
+			\item fe80:0:0:0:202:b3ff:fe1e:8329, elhagyhatjuk a vezetõ nullákat
+			\item fe80::202:b3ff:fe1e:8329, elhagyhatjuk az egymás melletti 0 tagokat, de csak egyszer!
+			\item Most még szokatlanok ezek a számok, de meg fogunk barátkozni velük!
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Névszolgáltatás -- DNS}
+	
+	\begin{itemize}
+		\item Az IP-címek emberi szem számára nehezen kezelhetõk
+		\item Megoldás: domain nevek és DNS -- Domain Name Service
+		\item Hierarchikus adatbázis
+		\item Fa struktúrájú domain nevek
+		\item Sok ezer szerver tárol (domain név -- IP-cím) párokat
+		\item Minden szerver a maga tartományának adatait tárolja és tartja karban
+		\item Ha ismerünk egy domain nevet, akkor
+		
+		\begin{itemize}
+			\item megkérdezünk egy DNS szervert, hogy milyen IP-cím tartozik hozzá
+			\item vagy tudja, és visszaadja
+			\item vagy azt tudja, hogy melyik másik DNS szervertõl kell megkérdezni, és továbbítja a kérést
+			\item így néhány lépés után megkapjuk a választ
+			\item \textsl{a valóságban kicsit bonyolultabb a dolog, de ez az alapelv}
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{A hálózati kommunikáció szabványos modellje}
+	
+	\begin{itemize}
+		\item ISO-OSI hétrétegû modellje
+		\item Szabványokban definiálja két hálózati eszköz kommunikációjának módját
+		\item ISO: International Organization for Standardization, Nemzetközi Szabványügyi Szervezet (iso görögül egyenlõt jelent)
+		\item OSI: Open Systems Interconnection Reference Model, Nyílt rendszerek Összekapcsolása, referencia modell
+
+		\begin{itemize}
+				\item az Internet mûködésének technikai alapja
+				\item minden eszköz összekapcsolható minden más eszközzel
+				\item Hogyan lehetséges ez?
+				
+				\begin{itemize}
+					\item 7 szintre osztja a hálózati kommunikációt
+					\item minden szint mûködését szabványok rögzítik
+					\item minden szint csak a közvetlenül alatta és felette lévõ réteggel kommunikálhat, nem léphet át más szintekre
+				\end{itemize}
+				
+		\end{itemize}
+
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}[plain]{ISO-OSI példa: Vállalati kommunikáció}
+	
+	\begin{figure}
+		\centering
+			\includegraphics[height=1.0\textheight]{images/OSI_pelda.png}
+		\label{fig:OSI_pelda}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}[plain]{ISO-OSI hétrétegû modell}
+	
+	\begin{figure}
+		\centering
+			\includegraphics[height=1.0\textheight]{images/OSI.png}
+		\label{fig:OSI}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}[plain]{Alkalmazások, protokollok és az egyes OSI rétegek}
+	
+	\begin{figure}
+		\centering
+			\includegraphics[height=1.0\textheight]{images/OSI_alkalmazasok.png}
+		\label{fig:OSI_alkalmazasok}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Miért jó, ha megismerünk egy ilyen rendszert}
+	
+	\begin{itemize}
+		\item Jobban átlátjuk, hogy mi történik a háttérben, amikor szörfölünk az Interneten
+		\item Jobban értjük, amikor aláírjuk a szerzõdést az Internet szolgáltatóval
+		\item Példa arra, hogy hogyan lehet megtervezni egy nagy rendszert
+		\item Ezt az elvet felhasználhatjuk máshol is
+		\item Példaként lásd a vállalati kommunikációról szóló példát!
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Hálózati szolgáltatások}
+	
+	\begin{itemize}
+		\item Hagyományos szolgáltatások:
+		
+		\begin{itemize}
+			\item Elektronikus levelezés
+			\item FTP - File Transfer Protocol
+			\item News, newsgroups - Hírcsoportok
+			\item Gopher - A www elõfutára, hierarchikus menürendszerben tette elérhetõvé az internetes tartalmakat
+			\item WWW -- World Wide Web
+		\end{itemize}
+		
+		\item Manapság minden hagyományos szolgáltatást magába olvasztott a World Wide Web
+		\item Szinte minden szolgáltatást egyetlen böngészõ programból érünk el
+		\item Az e-mail és az FTP maradt használatban részben a www-tól függetlenül is, de ezeknek is megvan a webes megfelelõjük
+		
+		\framebreak
+		
+		\item Új szolgáltatások:
+		
+		\begin{itemize}
+			\item Azonnali üzenetküldés
+			\item Videó átvitel
+			\item Távkonferencia
+			\item Keresés
+			\item Szemantikus web
+			\item Web2 -- Web 2.0
+			\item Cloud computing - Számítási felhõ
+			\item Internet of Things (IoT) - Tárgyak Internete
+			\item \dots
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Heterogén hálózatok}
+	
+	\begin{itemize}
+		\item Egy hagyományos vállalati rendszer 10 évvel ezelõtt:
+		
+		\begin{itemize}
+			\item belsõ vállalati hálózat:
+			
+			\begin{itemize}
+				\item megosztott szerverek, nyomtatók, stb.
+				\item belsõ kommunikáció, levelezés
+				\item elektronikus faliújság
+				\item céges telefonkönyv, a menza étlapja, hírek, megosztott fájlokban a szervereken
+			\end{itemize}
+			
+			\item egyes gépeken, vagy minden gépen van Internet hozzáférés is:
+			
+			\begin{itemize}
+				\item webes keresés
+				\item kommunikáció, chat, Skype, stb.
+				\item a cég honlapja
+				\item partnerek honlapjai, egyéb internetes szolgáltatások
+			\end{itemize}
+			
+			\item A cég informatikusai üzemeltetnek egy belsõ hálózatot a munkatársak számára, esetleg belépési lehetõséggel a partnercégek munkatársai számára
+			\item Ehhez kitalálnak, megvalósítanak és üzemeltetnek különbözõ egyedi megoldásokat
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Intranet}
+	
+	\begin{itemize}
+		\item Ötlet: Miért kell más megoldásokat használnunk a belsõ hálózaton, mint amit az Interneten használunk?
+		\item Hagyomány: az Internet elterjedése elõtt épültek ki a helyi hálózatok egyedi technikákkal, más protokollokat használva
+		\item Intranet: olyan belsõ hálózat, ami ugyanazokat a módszereket, hardver és szoftver eszközöket használja, mint az Interneten
+		
+		\begin{itemize}
+			\item TCP-IP protokoll a hálózati eszközök közötti kommunikációhoz
+			\item HTTP protokoll a hipertext dokumentumok továbbításához
+			\item A munkaállomásokon böngészõ program fut
+			\item A szervereken webszerver, levelezõszerver, FTP szerver fut
+			\item Kommunikációhoz használhatjuk az e-mailt, chat-et, Skype-ot, MSN-t stb.
+		\end{itemize}
+		
+		\item Mi választja el a külsõ és a belsõ hálózatot? \pause
+		
+		\begin{itemize}
+			\item Tûzfal -- Firewall
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}{Befejezés}
+
+\begin{block} {}
+	
+	\begin{center}
+	\vspace{1cm}
+	\LARGE{Köszönöm a figyelmet!}
+	\vspace{1cm}
+	\end{center}
+	
+\end{block}
+
+\end{frame}
+
+\end{document}
+
+

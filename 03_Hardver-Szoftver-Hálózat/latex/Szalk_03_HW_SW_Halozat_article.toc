@@ -1,0 +1,9 @@
+\select@language {magyar}
+\contentsline {section}{\numberline {1.}Hardver-Szoftver}{2}
+\contentsline {subsection}{\numberline {1.1.}A sz\'am\IeC {\'\i }t\'og\'ep hardver-szoftver fel\'ep\IeC {\'\i }t\'ese}{2}
+\contentsline {subsection}{\numberline {1.2.}A szoftver}{2}
+\contentsline {subsection}{\numberline {1.3.}Oper\'aci\'os rendszer}{5}
+\contentsline {section}{\numberline {2.}H\'al\'ozatok}{9}
+\contentsline {subsection}{\numberline {2.1.}A h\'al\'ozatok el\H onyei}{9}
+\contentsline {subsection}{\numberline {2.2.}H\'al\'ozatok oszt\'alyoz\'asa}{9}
+\contentsline {subsection}{\numberline {2.3.}H\'al\'ozatok m\H uk\"od\'ese}{12}

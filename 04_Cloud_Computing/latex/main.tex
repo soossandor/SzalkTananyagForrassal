@@ -1,0 +1,896 @@
+% $Header: /cvsroot/latex-beamer/latex-beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 1.7 2007/01/28 20:48:23 tantau Exp $
+
+% Version for PROJECTOR (Vetíthetõ változat)
+% Uncomment the next line (A vetíthetõ változathoz vedd ki a % jelet a következõ sor elejérõl)
+%\documentclass{beamer}
+% End of version for PROJECTOR (A vetíthetõ változat vége)
+
+% PRINTABLE version (Nyomtatható változat):
+% Uncomment the next two lines (vedd ki a % jelet a következõ 2 sor elejérõl)
+%\documentclass{article}
+%\usepackage{beamerarticle}
+% End of PRINTABLE version (A nyomtatott változat beállításának vége)
+
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  % or ...
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+% Magyar szöveg
+\usepackage[magyar]{babel}		% a Babel csomagot a magyar nyelvvel használjuk
+\usepackage[latin2]{inputenc}		% Latin-2-es kódolású ez a forrás
+\usepackage{t1enc}			% a belsõ ábrázolás és a kimeneti font-kódolás
+					% a T1 kódolás
+\usepackage{indentfirst}		% az elsõ bekezdés is behúzott legyen, ne csak a 2-tól
+\frenchspacing				% a mondatköz ugyanakkora nagy, mint a szóköz
+\setlength{\parskip}{\smallskipamount}	% bekezdések közötti távolság beállítása
+					% (gumi-méret: 3pt plus 1pt minus 1 pt)
+% Magyar szöveg vége
+
+
+% Angol szöveg
+%\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+% Angol szöveg vége
+
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\def\screenshotsize{0.70}
+\def\screenshotsizeB{0.50}
+\def\maintitle{Számítógépes alkalmazások\\Cloud Computing}
+\def\shorttitle{SZALK - Cloud Computing}
+\def\longdate{Sopron, 2015}
+\def\shortdate{2015}
+
+%packages to use
+\usepackage{graphicx}
+\usepackage{fancybox} 
+\usepackage{multicol}
+
+\only<beamer>{
+%Insert frame number to footline
+%Tested with the next themes: Warsaw, Berlin, Szeged, ...
+\newcommand*\oldmacro{}%
+\let\oldmacro\insertshorttitle%
+\renewcommand*\insertshorttitle{%
+  \oldmacro\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+%End of frame number to footline
+}
+
+\title[\shorttitle] % (optional, use only with long paper titles)
+{\maintitle}
+
+\author[Soós Sándor] % (optional, use only with lots of authors)
+{Soós Sándor}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[NYME SKK INGA] % (optional, but mostly needed)
+{
+%  \inst{1}%
+  Nyugat-magyarországi Egyetem\\
+  Simonyi Károly Mûszaki, Faanyagtudományi és Mûvészeti Kar\\
+  Informatikai és Gazdasági Intézet\\
+  \vspace{0.3cm}
+  E-mail: soossandor@inf.nyme.hu
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[\shortdate] % (optional, should be abbreviation of conference name)
+{\longdate}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+
+\only<article>{
+\begin{titlepage}
+
+\begin{center}
+
+%\vspace*{1cm}
+\Large
+\textsc{\maintitle}\\
+
+\vspace{5cm}
+
+%\LARGE
+\textsc{Soós Sándor}\\
+
+\vspace{5cm}
+%\textsc{\today}\\ %%Date - better you write it yourself.
+\textsc{\longdate}\\
+
+\end{center}
+
+\end{titlepage}
+}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+\only<beamer>{
+\pgfdeclareimage[height=1cm]{university-logo}{images/nyme_skk}
+\logo{\pgfuseimage{university-logo}}
+}
+
+%\only<beamer>{\subject{Practical Computer Science}}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+\only<beamer>{
+\begin{frame}{}
+  \titlepage
+\end{frame}
+}
+
+\begin{frame}{Tartalomjegyzék}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Mirõl lesz szó a mai órán?}
+
+\begin{itemize}
+	\item Cloud Computing -- Számítási felhõ fogalma
+	\item Cloud Computing alkalmazások
+	\item Hogyan mûködik a számítási felhõ?
+	\item Virtualizáció
+	\item Virtuális gépek, virtuális szerverek
+	\item Linux HA -- Magas rendelkezésreállású rendszerek
+\end{itemize}
+
+\begin{block}{}
+	\begin{center}
+		Jegyzetelés!!! -- Nem lesz minden felírva a diákra!
+	\end{center}
+\end{block}
+
+\end{frame}
+
+\section{A Cloud Computing fogalma}
+\label{sec:ACloudComputingFogalma}
+
+\subsection{Bevezetés}
+\label{sec:Bevezetes}
+
+\begin{frame}{Bevezetés}
+
+\begin{itemize}
+	\item John McCarthy, 1961:\\ 
+	\textsl{,,computation may someday be organized as a public utility''}\\
+	\item Utility computing
+	\item Párhuzam az energiaszolgáltatás fejlõdésével:
+\end{itemize}
+
+\begin{table}
+	\centering
+		\begin{tabular}{|c|c|}
+			\hline
+			\textbf{energiaszolgáltatás} & \textbf{számítástechnika} \\
+			\hline \hline
+			vízimalom & helyi mainframe \\
+			\hline
+			saját, vállalati áramfejlesztõ & személyi számítógép \\
+			\hline
+			helyi, közösségi erõmûvek & kliens-szerver rendszerek \\
+			\hline
+			központi erõmûvek, közmû & Cloud Computing \\
+			\hline
+		\end{tabular}
+	\label{tab:EnergiaszolgEsSzamtech}
+\end{table}
+
+\begin{block}{}
+	\begin{center}
+	A Cloud Computing megadja a lehetõséget, hogy az informatika éppen olyan egyszerûen használható közmûszolgáltatássá váljon, mint manapság a víz-, vagy az elektromos hálózat
+	\end{center}
+\end{block}
+
+\end{frame}
+
+%\begin{frame}{Virtualizáció -- Emlékeztetõ}
+	%
+	%\begin{itemize}
+		%\item Az elõzõ órán beszéltünk a virtualizációról. Emlékeztetõül:
+		%\item Nagyon sokféle dolgot értünk alatta
+		%\item \textit{,,A virtualizáció számítástechnikai kifejezés, számítógépi erõforrások különbözõ absztrakcióinak gyûjtõneve''}
+		%\item Mit lehet virtualizálni egy számítógépben?
+		%
+		%\begin{itemize}
+			%\item egyes hardvereszközöket:
+			%
+			%\begin{itemize}
+				%\item virtuális memória
+				%\item virtuális nyomtató
+				%\item tároló virtualizáció, virtuális kötetek, fájlrendszerek
+			%\end{itemize}
+			%
+			%\item egy teljes számítógépet:
+			%
+			%\begin{itemize}
+				%\item szervervirtualizáció - virtuális szerver
+				%\item desktop virtualizáció - virtuális munkaállomás, operációs rendszer
+			%\end{itemize}
+			%
+		%\end{itemize}
+		%
+		%\item Cloud Computing
+		%
+	%\end{itemize}
+	%
+%\end{frame}
+
+\begin{frame}{Cloud Computing -- Bevezetés}
+
+\begin{itemize}
+	\item Napjainkban az informatika világának egyik legforróbb témaköre a Cloud Computing (Számítási felhõ)
+	\item Egyes elemzõk szerint ez az évtized a Cloud Computing évtizede lesz
+	\item Mások azt mondják, hogy ez csak egy újabb marketing ötlet
+	\item Az azonban tény, hogy a különbözõ informatikai cégek sorban jelentik be és indítják útjára Cloud Computing szolgáltatásaikat:
+	\begin{itemize}
+		\item Google
+		\item SalesForce, GlideDigital, RackSpace, Zoho
+		\item Microsoft Azure
+		\item Amazon Elastic Compute Cloud (EC2)
+		\item T-Systems Virtualoso
+		\item IBM, HP, Dell, \dots
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Az üzleti élet kihívásai}
+
+\begin{itemize}
+	\item A legtöbb vállalat mûködésében az informatika kiemelkedõ fontosságú, és nélkülözhetetlen
+	\item Minden vállalatvezetõ szeretne takarékoskodni az informatikára költött összegekkel
+	\begin{itemize}
+		\item A Cloud Computing erre is lehetõséget teremt, de ezen túlmutató elõnyei is vannak
+	\end{itemize}
+	
+	\item A hagyományos formában mûködõ informatika mûködtetése, nyilvántartása, elszámolása nem illeszkedik a vállalatok mûködésének általános rendjébe:
+	
+	\begin{itemize}
+		\item beszerzés, könyvelés, leltározás, karbantartás, stb.
+	\end{itemize}
+	
+	\item Mi az oka ennek?
+	
+	\begin{itemize}
+		\item nagyon gyors fejlõdés, gyakori módosítás, pl. szoftverfrissítés, gyors erkölcsi és valóságos amortizáció
+		\item ezt nagyon nehéz követni, nyilvántartani
+	\end{itemize}
+\newpage	
+	\item Mi lehet a megoldás?
+	
+	\begin{itemize}
+		\item Nagy segítséget jelentene a cégek életében, ha az informatika is hasonlóan lenne mûködtethetõ és nyilvántartható, elszámolható, mint a többi szolgáltatás, vagy közmû
+		\item Üzleti, gazdasági szempontból erre ad megoldási lehetõséget a Cloud Computing
+		\item Most nézzük a kérdést technikai, mûszaki oldalról!
+	\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{A számítástechnika fejlõdése}
+
+\begin{itemize}
+	\item Tekintsük át a számítástechnika fejlõdésének történetét egy speciális szempontból!
+	\item Folyamatosan növekszik a rendelkezésre álló számítási kapacitás (processzor teljesítmény, memória, tárhely)
+	\item Fizikailag hol található ez a kapacitás?
+	
+	\begin{itemize}
+		\item a számítógépközpontokban
+		\item a felhasználó íróasztalán
+	\end{itemize}
+	
+	\item A kettõ közötti arány folyamatosan változik:
+		
+\begin{enumerate}
+	\item nagyszámítógép - terminál: minden számítási kapacitás a központban
+	\item személyi számítógép: egyre nagyobb kapacitás érhetõ el a saját íróasztalunkon
+	\item PDA, mobiltelefon, netbook: újra ,,kiskapacitású'' eszközöket használunk és ezekkel gigaszerverekhez kapcsolódunk
+\end{enumerate}
+	
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]{A számítástechnika 3 korszaka}
+
+\begin{enumerate}
+	\item Az Internet elõtt (50-es évek -- 90-es évek közepe)
+	\begin{itemize}
+		\item egymástól elszigetelt számítógép rendszerek
+		\item dedikált hálózatok, csak adott felhasználói kör férhet hozzá
+	\end{itemize}
+
+	\item Az Internet korszaka (90-es évek közepe -- \textit{napjaink})
+	\begin{itemize}
+		\item Kössünk össze mindent mindennel!
+		\item ,,Minden'' adat, információ, dokumentum elérhetõ
+		\item A közzétett és megszerzett információkat mindenki a ,,saját'' számítógéprendszerein állítja elõ, dolgozza fel
+		\item Az Internet korszaka nem ér véget napjainkban, de alaposan átalakul
+	\end{itemize}
+\newpage	
+	\item A Cloud Computing korszaka (\textit{napjaink} -- \dots)
+	\begin{itemize}
+		\item Nem szükséges mindenkinek kiépíteni a használni kívánt informatikai infrastruktúrát
+		\item Az Internet korában:
+		\begin{itemize}
+			\item lexikon helyett Web
+			\item telefonkönyv helyett Web
+			\item lokális adatok helyett Weben tárolt adatok
+			\item \dots
+		\end{itemize}
+
+		\item A Cloud Computing korában
+		
+		\begin{itemize}
+			\item PC, laptop helyett netbook, PDA, vagy mobiltelefon
+			\item saját szerver helyett bérelt szolgáltatás
+			\item lokálisan telepített szoftverek helyett internetes szolgáltatások, felhõszolgáltatások
+		\end{itemize}
+
+	\end{itemize}
+
+\end{enumerate}
+
+\end{frame}
+
+\subsection{A számítási felhõ fogalma}
+\label{sec:ASzamitasiFelhoFogalma}
+
+\begin{frame}{A felhõ fogalma}
+
+Az informatikai rendszer azon részét nevezzük és ábrázoljuk felhõnek, aminek belsejével és mûködésének részleteivel az adott vizsgálati szinten nem foglalkozunk, fekete doboznak tekintjük, a külsõ kapcsolataira koncentrálunk.
+
+\begin{figure}
+	\centering
+\includegraphics[width=2in]{images/cloud_computing_www_oxygenit_com_au}
+%	\caption{Informatikai felhõ}
+	\label{fig:cloud_computing_www_oxygenit_com_au}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{A Számítási felhõ --- Cloud Computing}
+
+\begin{itemize}
+	\item Olyan informatikai rendszer, amiben az elvégzendõ mûveleteket, vagy azok egy részét a helyi géprõl a felhõbe telepítjük
+	\item Helyi gépként elegendõ egy vékony kliens: netbook, PDA, mobiltelefon
+	\item Milyen funkciókat telepíthetünk a felhõbe:
+	\begin{itemize}
+		\item adattárolás --- tárhelyszolgáltatás (Dropbox, Mozy, ADrive)
+		\item levelezés, naptár --- webes levelezõ szolgáltatások
+		\item irodai funkciók --- Google Docs
+		\item CRM (VIR) --- SalesForce
+		\item teljes operációs rendszer --- GlideDigital, RackSpace, Zoho, JoliCloud
+		\item teljes szerver --- Amazon Elastic Compute Cloud (EC2), Microsoft Azure
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+\subsection{A számítási felhõk jellemzõi}
+\label{sec:ASzamitasiFelhokJellemzoi}
+
+
+\begin{frame}{A számítási felhõk szolgáltatási szintjei}
+
+\begin{description}
+		\item[Infrastructure-as-a-Service (IaaS)]
+		A szolgáltató üres virtuális szervereket szolgáltat, amelyeket úgy használhatunk, mintha a saját szerverszobánkban lenne egy saját szerverünk. Pl. Amazon EC2, T-Systems Virtualoso Server
+		\item[Platform-as-a-Service (PaaS)]
+		Nem kapunk egy teljes szervert, nem kapjuk meg a root jelszót, csak egy keretrendszert, szolgáltatás csomagot kínál a szolgáltató. A megrendelõ ezen a platformon dolgozhat, készítheti el, és telepítheti a szükséges alkalmazásokat. Pl. force.com
+		\item[Software-as-a-Service (SaaS)] 
+		Kulcsrakész alkalmazásokat kínál a szolgáltató. Csak a programok használatával kell foglalkoznia a megrendelõnek. Pl. Google Apps, Zoho, SalesForce
+\end{description}
+
+\end{frame}
+
+\begin{frame}{A számítási felhõk jellemzõi}
+
+\begin{itemize}
+	\item Beruházás helyett szolgáltatás vásárlás
+	\item Nem vesszük meg a szervereket, tárolóeszközöket, szoftvereket, mindent szolgáltatásként veszünk igénybe
+	\item Minden háttérszolgáltatást, ami az IT személyzet feladata lenne, a szolgáltató végez el: biztonsági mentés, szoftverek verziókövetése, hardvereszközök karbantartása, javítása
+	\item Korlátlan skálázhatóság felfelé és lefelé
+	\item Virtualizáció:
+	\begin{itemize}
+		\item minden fizikai eszközt virtualizál a szolgáltató, szerverek, háttértárak, hálózati kapcsolatok
+		\item minden virtuális eszköz programozható, távolról vezérelhetõ
+		\item így garantálható a folyamatos szolgáltatás, és a hatékony erõforrásgazdálkodás
+	\end{itemize}
+	\item Csak azért fizetünk, amit igénybeveszünk, csak arra az idõre fizetjük ki a nagyobb kapacitást, amikor használjuk
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{A számítási felhõk típusai}
+
+\begin{description}
+	\item[Publikus felhõk -- External] A megrendelõ hálózatán kívül mûködõ felhõ, a teljes infrastruktúrát a szolgáltató üzemelteti, a megrendelõ csak a klienseket birtokolja és üzemelteti, minden mást szolgáltatásként vesz igénybe
+	\item[Privát felhõk -- Internal] A megrendelõ hálózatán belül megvalósított felhõ, az IT részleg üzemelteti és nyújtja a szolgáltatásokat a többi felhasználónak
+	\item[Virtuális privát felhõ] Egy publikus felhõszolgáltató nyújt egy megrendelõ számára kizárólagos (privát) szolgáltatást
+	\item[Hibrid felhõk] Az igényelt szolgáltatások egy részét privát, más részét publikus felhõbõl vesszük igénybe
+	\item[Vertikális, közösségi felhõk] Speciális publikus felhõ, azonos szolgáltatásokat igénylõ megrendelõk számára, pl. kórházak, egyetemek, állami szervek, intézmények
+\end{description}
+
+\end{frame}
+
+\subsection{Biztonság, bizalom}
+\label{sec:BiztonsagBizalom}
+
+\begin{frame}{Biztonság és bizalom}
+
+\begin{itemize}
+	\item A Cloud Computing szolgáltatások elterjedésének talán legfontosabb elõfeltétele, hogy kellõ szintû biztonságot tudjanak garantálni a szolgáltatók, és ezt el is higgyék a potenciális megrendelõk
+	\item Biztonság
+	\begin{itemize}
+		\item technikai, mûszaki értelemben a feladat megoldható
+		\item banki rendszerek, kártyás fizetés, elektronikus adóbevallás
+	\end{itemize}
+
+	\item Bizalom
+	\begin{itemize}
+		\item Kiben bízik meg jobban a cégvezetés, a saját IT személyzetben, vagy egy szerzõdött partner munkatársaiban?
+		\item Bizonyos esetekben megoldást jelenthet egy speciális vertikális felhõ, ahol együtt üzemeltetik a rendszert a szolgáltató és a megrendelõ munkatársai
+	\end{itemize}
+	
+\end{itemize}
+
+\end{frame}
+
+\section{A Számítási felhõk használata}
+\label{sec:ASzamitasiFelhokHasznalata}
+
+\begin{frame}[allowframebreaks]{A Számítási felhõ használata}
+	Nézzünk néhány gyakorlati példát, elõször felhasználói oldalról!
+	
+	\begin{itemize}
+		\item Mit tudunk ma megcsinálni egy ,,üres'', Internetre kapcsolt számítógéppel?
+		\item Adott egy Internetre kapcsolt gép, amin csak egy operációs rendszer és egy böngészõ program fut (Netbook)
+		
+		\begin{enumerate}
+			\item elolvashatunk használhatunk minden weboldalt
+			\item kommunikálhatunk bárkivel e-mailben, chaten, MSN-en, Skype-on, fórumokon, stb. 
+			\\ $\:$
+			\\ ezeket korábban is az Interneten végeztük 
+			\\ mi a helyzet azokkal a funkciókkal, amiket a gépre telepített programokkal szoktunk elvégezni
+			\framebreak
+			\item Irodai programok, szövegszerkesztõ, számolótábla, prezentáció készítõ, stb.
+			
+			\begin{itemize}
+				\item Google Docs -- http://docs.google.com
+				\item Zoho -- http://zoho.com  (Docs) menüpont
+				\item Glide OS -- http://glidedigital.com/
+				\item Adobe -- http://acrobat.com
+				\item JoliCloud -- http://my.jolicloud.com
+				\item MS Office Online -- http://office.live.com
+			\end{itemize}
+			
+			\item Számológép, matematika
+			
+			\begin{itemize}
+				\item http://www.google.com
+				\\ Írjuk a keresõbe a kiszámítandó kifejezést!
+				\\ Segítség: http://www.googleguide.com/calculator.html
+				\item http://www.google.com/ig, Google Calculator gadget
+				\item http://www.wolframalpha.com/
+			\end{itemize}
+
+			\framebreak
+			
+			\item Térképek, útvonaltervezõk
+			
+			\begin{itemize}
+				\item http://maps.google.com/
+				\item http://www.utvonalterv.hu/ -- csak Magyarország
+				\item http://mymap.hu/
+				\item http://www.terkepek.hu/
+				\item http://map24.com
+				\item http://www.orszagterkep.hu/
+				\item http://www.terkepkalauz.hu/
+				\item http://maps.yahoo.com
+				\item http://www.worldatlas.com
+				\item http://www.bing.com/maps  
+				\\ $\ $
+				\item hasznos funkciók:
+					\item madártávlat (bird's eye), utcanézet (streetview)
+					\item útvonaltervezés, segédfunkciók, benzinkút, szállás, étkezés, látnivalók
+					\item a tervezett útvonal elõzetes végigjárása
+						
+			\end{itemize}
+					
+			\framebreak
+			
+			\item Tárhelyszolgáltatások
+			
+			\begin{itemize}
+				\item http://www.adrive.com/ -- 50 GB ingyen
+				\item http://www.4shared.com/ -- 10 GB ingyen
+				\item http://data.hu/
+			\end{itemize}
+			
+			\item \dots
+		\end{enumerate}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\section{Üzemeltetési, szakmai kérdések}
+\label{sec:UzemeltetesiSzakmaiKerdesek}
+
+\begin{frame}{Üzemeltetési, szakmai kérdések}
+
+\begin{itemize}
+	\item Milyen feladatokat kell megoldania egy számítási felhõket üzemeltetõ szolgáltatónak?
+	
+	\begin{itemize}
+		\item speciális elvárások:
+		\begin{itemize}
+		  \item nem lehet értesíteni a felhasználókat, hogy pénteken délután karbantartás miatt leáll a szerver
+			\item nincsen holtidõ, mert a világon bárhonnan érkezhet felhasználó
+			\item a szolgáltatások futtatása megszakítás nélkül
+			\item karbantartás (szoftverfrissítés, adatmentés) a virtuális szerverek leállítása nélkül
+			\item folyamatos üzem hardverhiba esetén is 
+			\item méretezés, nem lehet tudni, hogy mikor hány felhasználó akarja használni a rendszert
+		\end{itemize}
+		
+		\item hogyan tudjuk mindezt (költség)hatékonyan megvalósítani?
+	\end{itemize}
+\end{itemize}
+	
+\end{frame}
+
+\subsection{Megoldási lehetõségek}
+\label{sec:MegoldasiLehetosegek}
+
+\begin{frame}{A megoldás elemei}
+	
+\begin{itemize}
+	\item Virtualizáció minden szinten
+	\item Virtuális szerverek használata
+	\item High Availability Linux (Linux HA)
+	\item Különbözõ szerver-kiszolgálási stratégiák kidolgozása, modellezése, pl. working vacation, CPU throttling, \dots
+	\item A virtualizáció lehetõvé teszi, hogy egymástól függetlenül optimalizáljunk különbözõ paramétereket:
+	
+	\begin{itemize}
+		\item szerverek földrajzi helye -- a szolgáltatás helye
+		\item fizikai erõforrások -- virtuális erõforrások
+		\item a számítóközpontokat ott helyezzük el, ahol a legkisebb környezetterhelést okozza, áramfelvétel, klimatizálás, környezetvédelem, ,,Zöld informatika''
+		\item az erõforrások dinamikus kiosztása
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Informatikai infrastruktúra napjainkban}
+
+\begin{figure}
+	\centering
+		\includegraphics<beamer>[width=3.5in]{images/clouds.jpg}
+		\includegraphics<article>[width=4in]{images/clouds.jpg}
+			\only<article>{\caption{Az informatikai infrastruktúra napjainkban}}
+			\label{fig:clouds}
+\end{figure}
+
+\end{frame}
+
+\subsection{Virtualizáció - Virtuális gép}
+\label{sec:VirtualizációVirtuálisGép}
+
+\begin{frame}{Virtualizáció - Virtuális gép}
+
+\begin{itemize}
+	\item A virtuális gép, egy vagy több teljes számítógép megvalósítása egy másik számítógépben
+\end{itemize}
+
+\begin{figure}
+	\centering
+		\includegraphics<beamer>[width=2.8in]{images/virtualis_gepek.jpg}
+		\includegraphics<article>[width=4in]{images/virtualis_gepek.jpg}
+			\only<article>{\caption{Virtuális gépek}}
+			\label{fig:virtualis_gepek}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{A virtuális gépek mûködése}
+
+\begin{itemize}
+	\item a virtualizációs szoftver a fizikai gép erõforrásait használva szimulál egy vagy több számítógépet
+	\item a programban beállíthatjuk, az egyes virtuális gépek által használható erõforrásokat (processzor, memória, háttértárak, eszközök, audió, videó, USB portok, stb.)
+	\item a szimulált gépre feltelepítünk egy tetszõleges operációs rendszert, teljesen szabadon választhatunk függetlenül a gazda operációs rendszertõl és a többi virtuális géptõl
+	\item ha elindítunk egy vagy több virtuális gépet, akkor szabadon váltogathatunk a gazda és a futó virtuális gépek között
+	\item pl. egyszerre dolgozhatunk különbözõ Windows-okkal, Linuxokkal, MacOS-szel, stb.
+	\item menet közben is szabályozhatjuk az egyes virtuális gépek ,,fizikai'' paramétereit
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Példa: Virtualizáció egy munkaállomáson -- VirtualBox}
+	
+	\begin{itemize}
+		\item Ingyenes megoldás: Sun (Oracle) VirtualBox (http://www.virtualbox.org)
+		\item A gépünkön lévõ operációs rendszernek (gazda-host OS) megfelelõ verziót kell letölteni és feltelepíteni úgy, mint bármely más alkalmazást
+		\item Töltsük le és telepítsük fel a ,,Oracle VM VirtualBox Extension Pack''-et! Ebbõl csak egy van, nem függ a host operációs rendszertõl
+		\item Ha elindítjuk a programot, a következõ dián láthatóhoz hasonló képet kapunk. Elsõ alkalommal persze üres tartalommal
+		\item Az ,,Új'' gombbal indíthatjuk el egy új operációs rendszer telepítését
+		\item Ugyanúgy történik, mintha egy üres gépre telepítenénk, egyetlen különbséggel:
+		
+		\begin{itemize}
+			\item a telepítés elején a VirtualBox létrehoz egy virtuális merevlemezt
+			\item ez egy nagy fájl a host operációs rendszerben
+			\item ebben a fájlban fog felépülni a teljes operációs rendszer
+		\end{itemize}
+		
+		\item Ha elkészültünk, a ,,Start'' gombbal indítsuk el az új virtuális gépet
+		\item Az elsõ alkalommal érdemes feltelepíteni a Guest Addition programot (magyarul Integrációs szolgáltatásokat) az Eszközök menübõl
+		%\framebreaks
+		\item Enélkül is mûködik a virtuális gép, de így jobban illeszkedik a host operációs rendszerbe, pl.
+		
+		\begin{itemize}
+			\item bárhonnan elérhetjük a közös Vágólapot
+			\item szabadon átméretezhetjük az ablakot
+			\item \dots
+		\end{itemize}
+		
+		\item Ezután használhatjuk az új virtuális gépet
+		\item Bármikor feltelepíthetünk egy újabb operációs rendszert (virtuális gépet)
+		\item Ha elegendõ hardver erõforrás van a fizikai gépünkben, akkor párhuzamosan is futtathatunk több gépet
+		\item Egymástól függetlenül minden gépre beállíthatjuk, hogy milyen hardver erõforrásokat használhat
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{VirtualBox}
+	
+	\begin{figure}
+		\centering
+			\includegraphics[height=2.5in]{images/virtualbox.png}
+		\label{fig:virtualbox}
+	\end{figure}
+		
+\end{frame}
+
+\begin{frame}{VirtualBox beállítások}
+	
+	\begin{figure}
+		\centering
+			\includegraphics[height=2.5in]{images/virtualbox_beallitasok.png}
+		\label{fig:virtualbox_beallitasok}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}[plain]{VirtualBox futás közben}
+	
+	\begin{figure}
+		\centering
+			\includegraphics[width=1.0\textwidth]{images/virtualbox_desktop.png}
+		\label{fig:virtualbox_desktop}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Mire jó ez?}
+	
+	\begin{enumerate}
+		\item Saját gépünkön kipróbálhatjuk a virtualizáció mûködését
+		\item Különbözõ feladatokra létrehozhatunk teljesen független gépeket, mintha több számítógépünk lenne
+		
+		\begin{itemize}
+			\item egy gép a tanuláshoz Windows 7-tel
+			\item egy gép a régi játékokhoz Windows XP-vel
+			\item egy gép a Linux kipróbálásához
+			\item egy gép az általunk írt szoftver teszteléséhez, rugalmasan módosíthatjuk az erõforrásokat
+			\item egy gép a haveroktól kapott új program kipróbálásához, ha valamit elront a gépen (vírus, rossz driverek, stb.), letörlöm a virtuális gépet
+		\end{itemize}
+	
+		\item Minden feladatra a legmegfelelõbb operációs rendszert használhatjuk tetszõleges paraméterekkel
+		\item Kockázatmentesen kipróbálhatjuk a legújabb operációs rendszereket és programokat
+	\end{enumerate}
+	
+\end{frame}
+
+
+\subsection{Hagyományos és virtuális szerverek}
+\label{sec:HagyomanyosEsVirtualisSzerverek}
+
+\begin{frame}{Hagyományos szerverek}
+
+\begin{figure}
+	\centering
+		\includegraphics[width=1.00\textwidth]{images/hagyomanyos_szerverek.pdf}
+	\label{fig:hagyomanyos_szerverek}
+\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Hagyományos szerverek}
+	
+	\begin{itemize}
+		\item ha egy cégnek szüksége van különbözõ szerverekre:
+		
+		\begin{itemize}
+			\item levelezõ szerver
+			\item fájl szerver
+			\item webszerver
+			\item \dots
+		\end{itemize}
+		
+		\item akkor üzembeállít szervergépeket és mindegyik szerverszoftvert feltelepíti valamelyik gépre
+		\item egymástól függetlenül mûködnek az egyes gépek és rajtuk a szerverek
+		\item minden program a saját fizikai gépének erõforrásaival gazdálkodhat
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Virtuális szerverek}
+	
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.90\textwidth]{images/virtualis_szerver.pdf}
+		\label{fig:virtualis_szerver}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Virtuális szerverek}
+	
+	\begin{itemize}
+		\item a rendelkezésre álló fizikai gépekbõl építünk egy speciális hálózatot, klaszter (cluster)
+		\item a klaszter egy virtuális számítógépként mûködik
+		\item a szükséges szolgáltatásokat a klaszterre telepítjük
+		\item a vezérlõ program osztja szét a teljes rendszer erõforrásait
+		\item a fizikai gépek egy részét leállíthatjuk, vagy újabbakat indíthatunk el, szükség szerint
+		\item ezzel megoldottuk a hatékony erõforrásgazdálkodást
+		\item Hogyan lesz a rendszer magas rendelkezésreállású?
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Magas rendelkezésreállású rendszerek}
+
+\begin{itemize}
+	\item A számítási felhõ mûködéséhez olyan hardver és szoftver megoldásokra van szükség, amelyek garantálni tudják a biztonságos, folyamatos üzemet
+	\item Nem csak a meghibásodásokra kell gondolni, hanem a rendszeres karbantartás, biztonsági mentések megvalósítására is
+	\item Megoldás: redundancia + intelligens hardver-szoftver megoldások 
+	\item Egy ingyenes megoldás: Linux HA (High Availability)
+\end{itemize}
+
+\end{frame}
+
+\subsection{Linux HA klaszter}
+\label{sec:LinuxHAKlaszter}
+
+\begin{frame}{Linux HA klaszter}
+
+\begin{figure}
+	\centering
+		\includegraphics<beamer>[width=3.5in]{images/fizikai_halozat.jpg}
+		\includegraphics<article>[width=4in]{images/fizikai_halozat.jpg}
+			\only<article>{\caption{Linux HA klaszter}}
+			\label{fig:fizikai_halozat}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Linux HA klaszter mûködése}
+
+\begin{itemize}
+	\item a klaszterben lévõ gépek folyamatosan figyelik egymást (Heartbeat program)
+	\item ha azt észlelik, hogy valamelyik gép nem mûködik, akkor a többi gép átveszi a funkcióit
+	\item a külsõ felhasználó nem veszi észre a változást
+	\item a szerverszolgáltatások nem az egyes szervereken futnak, hanem a klaszteren
+	\item hogy egy szolgáltatás ténylegesen melyik gépen fut, az különbözõ módokon szabályozható: automatikusan, elõre megadott szabályokkal, ad hoc módon
+	\item ez lehetõvé teszi az erõforrásokkal való gazdálkodást, a kiesõ erõforrások kiváltását, bármelyik szerver leállítását, miközben kívülrõl minden változatlan
+	
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Virtuális klaszter}
+
+\begin{itemize}
+	\item Kapcsoljuk össze ezt a két ötletet!
+	\item Virtuális szerverekbõl szervezzünk Linux HA klasztert!
+	\item Egyesítjük a két megoldás elõnyeit
+\end{itemize}
+
+\begin{figure}
+	\centering
+	\includegraphics<beamer>[width=3in]{images/networks_hun_02.jpg}
+		\includegraphics<article>[width=4in]{images/networks_hun_02.jpg}
+			\only<article>{\caption{Virtuális klaszter}}
+			\label{fig:virtualis_klaszter}
+\end{figure}
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}{Befejezés}
+
+\begin{block} {}
+	
+	\begin{center}
+	\vspace{1cm}
+	\LARGE{Köszönöm a figyelmet!}
+	\vspace{1cm}
+	\end{center}
+	
+\end{block}
+
+\end{frame}
+
+\end{document}
+
+

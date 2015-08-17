@@ -1,0 +1,731 @@
+% $Header: /cvsroot/latex-beamer/latex-beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 1.7 2007/01/28 20:48:23 tantau Exp $
+
+% Version for PROJECTOR (Vetíthetõ változat)
+% Uncomment the next line (A vetíthetõ változathoz vedd ki a % jelet a következõ sor elejérõl)
+%\documentclass{beamer}
+% End of version for PROJECTOR (A vetíthetõ változat vége)
+
+% PRINTABLE version (Nyomtatható változat):
+% Uncomment the next two lines (vedd ki a % jelet a következõ 2 sor elejérõl)
+%\documentclass{article}
+%\usepackage{beamerarticle}
+% End of PRINTABLE version (A nyomtatott változat beállításának vége)
+
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  % or ...
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+% Magyar szöveg
+\usepackage[magyar]{babel}		% a Babel csomagot a magyar nyelvvel használjuk
+\usepackage[latin2]{inputenc}		% Latin-2-es kódolású ez a forrás
+\usepackage{t1enc}			% a belsõ ábrázolás és a kimeneti font-kódolás
+					% a T1 kódolás
+\usepackage{indentfirst}		% az elsõ bekezdés is behúzott legyen, ne csak a 2-tól
+\frenchspacing				% a mondatköz ugyanakkora nagy, mint a szóköz
+\setlength{\parskip}{\smallskipamount}	% bekezdések közötti távolság beállítása
+					% (gumi-méret: 3pt plus 1pt minus 1 pt)
+% Magyar szöveg vége
+
+
+% Angol szöveg
+%\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+% Angol szöveg vége
+
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\def\screenshotsize{0.70}
+\def\screenshotsizeB{0.50}
+\def\maintitle{Számítógépes alkalmazások\\Mikroszámítógépek}
+\def\shorttitle{SZALK - Mikroszámítógépek}
+\def\longdate{Sopron, 2015.}
+\def\shortdate{2015}
+
+%packages to use
+\usepackage{graphicx}
+\usepackage{fancybox} 
+\usepackage{multicol}
+
+\only<beamer>{
+%Insert frame number to footline
+%Tested with the next themes: Warsaw, Berlin, Szeged, ...
+\newcommand*\oldmacro{}%
+\let\oldmacro\insertshorttitle%
+\renewcommand*\insertshorttitle{%
+  \oldmacro\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+%End of frame number to footline
+}
+
+\title[\shorttitle] % (optional, use only with long paper titles)
+{\maintitle}
+
+\author[Soós Sándor] % (optional, use only with lots of authors)
+{Soós Sándor}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[NYME SKK INGA] % (optional, but mostly needed)
+{
+%  \inst{1}%
+  Nyugat-magyarországi Egyetem\\
+  Simonyi Károly Mûszaki, Faanyagtudományi és Mûvészeti Kar\\
+  Informatikai és Gazdasági Intézet\\
+  \vspace{0.3cm}
+  E-mail: soossandor@inf.nyme.hu
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[\shortdate] % (optional, should be abbreviation of conference name)
+{\longdate}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+
+\only<article>{
+\begin{titlepage}
+
+\begin{center}
+
+%\vspace*{1cm}
+\Large
+\textsc{\maintitle}\\
+
+\vspace{5cm}
+
+%\LARGE
+\textsc{Soós Sándor}\\
+
+\vspace{5cm}
+%\textsc{\today}\\ %%Date - better you write it yourself.
+\textsc{\longdate}\\
+
+\end{center}
+
+\end{titlepage}
+}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+\only<beamer>{
+\pgfdeclareimage[height=1cm]{university-logo}{images/nyme_skk}
+\logo{\pgfuseimage{university-logo}}
+}
+
+%\only<beamer>{\subject{Practical Computer Science}}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+\only<beamer>{
+\begin{frame}{}
+  \titlepage
+\end{frame}
+}
+
+\begin{frame}{Tartalomjegyzék}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Mirõl lesz szó a mai órán?}
+
+\begin{itemize}
+	\item A mikroszámítógép felépítése
+	\item A mikroprocesszorok technológiája, Moore törvénye
+	\item A mikroprocesszorok csoportosítása (Risc, Cisc) 
+	\item Mikroprocesszor/regiszterek
+	\item Mikroprocesszor/ALU
+	\item Mikroprocesszor/CU és mikroprogram tár
+	\item A mikroprocesszor mûködése
+	\item Órajel, gépi ciklus, belsõ sín
+	\item Memória: funkció, osztályozás
+	\item A sín (busz) rendszer funkciója, részei, jellemzõi
+	\item Szabványos interfészek
+	\item Adatátviteli megoldások
+	\item Perifériák és tulajdonságaik
+	\item Háttértárak és jellemzõik
+\end{itemize}
+
+,,Puska:''
+
+\begin{itemize}
+	\item Pluhár Gábor: Informatikai Értelmezõ Szótár \\
+	http://mek.niif.hu/00000/00083/00083.htm
+	\item PC World IT Lexikon: http://pcworld.hu/szotar
+\end{itemize}
+
+
+\end{frame}
+
+
+\section{A mikroszámítógép}
+\label{sec:AMikroszamitogep}
+
+\subsection{A mikroszámítógép felépítése}
+\label{sec:AMikroszamitogepFelepitese}
+
+\begin{frame}{A mikroszámítógép felépítése}
+	
+	\begin{description}
+		\item[Bemeneti egység (input)]-- amely az adatok és a programok bevitelét biztosítja
+		\item[Operatív memória (RAM)]-- amely a mûveletek elvégzéséhez szükséges adatokat és programokat, valamint az eredményt tárolja késõbbi felhasználás céljából
+		\item[Mikroprocesszor (CPU)]-- amely a memóriából kapott adatokon a programnak megfelelõ logikai és számítási mûveleteket elvégzi
+		\item[Kimeneti egység (output)]-- amelyen keresztül az eredmény eljut a felhasználóhoz
+ 	\end{description}
+	
+\end{frame}
+
+\begin{frame}[plain]{A mikroszámítógép felépítése}
+	
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=3in]{images/mikroszamitogep.png}
+		\label{fig:mikroszamitogep}
+	\end{figure}
+	
+\end{frame}
+
+\subsection{Mikroprocesszor}
+\label{sec:Mikroprocesszor}
+
+\begin{frame}{A mikroprocesszor}
+	
+	\begin{itemize}
+		\item a számítógép központi egysége
+		\item CPU: Central Processing Unit
+		\item ez irányítja a számítógépet, futtatja a programokat
+		\item \emph{,,Mikro''}
+		
+		\begin{itemize}
+			\item kis fizikai méret
+			\item alacsony fogyasztás
+			\item alacsony ár
+		\end{itemize}
+		
+		\item univerzális mûködés
+		\item széleskörû felhasználás
+		\item nagy sorozatú gyártás
+		\item csökkenõ ár
+	\end{itemize}
+	
+\end{frame}
+
+\subsection{A mikroprocesszorok technológiája}
+\label{sec:AMikroprocesszorokTechnologiaja}
+
+\begin{frame}{A mikroprocesszorok technológiája}
+	
+	\begin{itemize}
+		\item szilicium alapú CMOS technológia
+		\item Cél: minél több alkatrész kerüljön egy chipre
+		\item Elõny: olcsóbb, gyorsabb, kis helyen elfér
+		\item Hátrány: melegedés, meg kell oldani a hûtést
+	\end{itemize}
+		
+	\begin{table}[htbp]
+		\centering
+			\begin{tabular}{|l|c|r|r|}
+			\hline
+			Típus & Évjárat & Tranzisztorszám & Sûrûség \\
+			\hline
+			Intel 8086 & 1978 & $29\ 000$ & $3\ \mu m$ \\
+			Intel Pentium & 1993 & $3\ 000\ 000$ & $0,8\ \mu m$ \\
+			Intel 8-core Xeon Nehalem-EX & 2010 & $2\ 300\ 000\ 000$ & $45\ nm$ \\
+			12-core POWER8 & 2013 & $4\ 200\ 000\ 000$ & $22\ nm$ \\
+			IBM z13 Storage Controller & 2015 & $7\ 100\ 000\ 000$ & $22\ nm$ \\
+			\hline
+			\end{tabular}
+	\end{table}
+	Forrás: http://en.wikipedia.org/wiki/Transistor\_count
+	
+	\begin{description}
+		\item[Moore törvénye (1965)] másfél évente megduplázódik a chipenkénti tranzisztorok száma és a teljesítmény
+	\end{description}
+	
+\end{frame}
+
+\begin{frame}{Mikroprocesszorok csoportosítási lehetõségei}
+	
+	\begin{table}[htbp]
+		\centering
+			\begin{tabular}{lrcl}
+			Szóhosszúság: 			& 4 bit 					& $\dots$ & 64 bit \\
+			Utasításformátum: 	& RISC (Reduced) 	& , 			& CISC (Complex) \\
+			Utasításkészlet: 		& 100							& $\dots$	& 1000 \\
+			Órajel:							& 4,77 MHz				& $\dots$	& 4 GHz \\
+			Címezhetõ memória:	& 64 kB						& $\dots$	& 4 GB \\
+			Buszméret:					& 8 bit						& $\dots$	& 64 bit \\
+			\end{tabular}
+	\end{table}
+	
+\end{frame}
+
+\begin{frame}{Mikroprocesszorok összehasonlítása}
+	
+	\begin{table}[htbp]
+		\centering
+			\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+			\hline
+			\textbf{CISC} & \textbf{RISC} \\
+			\hline \hline
+			Complex Instruction Set Computer & Reduced Instruction Set Computer \\ \hline
+			sok utasítás, többségüket mikroprogram definiálja & kevés utasítás, hardveres megvalósítás \\ \hline
+			bonyolult címzési módok & egyszerû címzési módok \\ \hline
+			változó utasításhossz & fix kódhosszúság \\ \hline
+			különbözõ órajel hosszúságú utasítások & minden utasítás 1 órajel hosszú \\ \hline
+			egyszerûbb assembly programozás & hosszabb assembly programokra van szükség \\ \hline
+			Pl. Intel 286/386/486, Pentium & Pl. PowerPC \\ \hline
+			\end{tabular}
+	\end{table}
+	
+\end{frame}
+
+\begin{frame}{Mikroprocesszorok funkcionális egységei}
+	
+	\begin{itemize}
+		\item Regiszterek
+		\item Aritmetikai-logikai egység (ALU)
+		\item Vezérlõ egység (CU)
+		\item Mikroprogram-tár
+		\item Belsõ buszrendszer
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Regiszterek}
+	
+	\begin{itemize}
+		\item Gyors mûködésû átmeneti tárolók:
+	
+		\begin{itemize}
+			\item $8\dots512$ db 
+			\item méretük a processzor típusától függõen változik: 4 bit $\dots$ 64 bit, ezt nevezzük a processzor szóhosszúságának
+			\item az operatív memóriánál akár 100-szor gyorsabb lehet
+			\item közvetlenül ezekkel dolgozik a processzor, a memóriából betölti az adatokat a regiszterekbe, feldolgozza, visszatölti a memóriába
+		\end{itemize}
+
+		\item Osztályozásuk:
+		
+		\begin{description}
+			\item[Rendszer regiszterek] a felhasználó (programok) közvetlenül nem fér hozzá, pl. flag regiszter (állapotjelzõ), címbusz regiszter, adatbusz regiszter
+			
+			\item[Általános célú regiszterek] a programok használják, pl. akkumulátor, utasítás regiszter, utasításszámláló, címregiszter, adatregiszter
+		\end{description}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Flag regiszter}
+	
+	\begin{itemize}
+		\item minden bitje egy-egy rendszerjellemzõt tárol, pl. az utoljára végrehajtott utasításban volt-e túlcsordulás, 0 volt-e az eredménye, mi volt az elõjele, stb. 
+		\item bizonyos utasítások a flag regiszter bitjeinek állapotától függõen csinálnak valamit
+		\item Például: \textbf{JZ >>cím<<}
+		
+		\begin{itemize}
+			\item ,,Jump if zero'' (ugrás, ha nulla)
+			\item a gépi kódú utasítások végrehajtásakor a processzor mindig beállítja a flag regiszter egyes bitjeit
+			\item pl. ha az utoljára végrehajtott gépi kódú utasítás eredménye nulla volt, akkor egyre állítja zéró bitet
+			\item ha a következõ utasítás a \textbf{JZ >>cím<<}, akkor ha a zéró bit értéke 1, akkor elugrik a >>cím<< memóriacímre és onnan folytatja a végrehajtást, egyébként folytatja a következõ utasításnál
+			\item ez felel meg a magasszintû programozási nyelvek \textbf{IF} utasításának
+			\item több hasonló utasítás létezik: 
+		\end{itemize}
+		
+	\end{itemize}
+		
+	\begin{table}[htbp]
+		\centering
+			\begin{tabular}{|l|l|}
+			\hline
+			JZ (JE) & ugrás, ha egyenlõ (nulla) (equal-zero) \\
+			JNZ (JNE) & ugrás, ha nem egyenlõ (nem nulla) (nonequal-nonzero) \\
+			JG & ugrás, ha nagyobb (greater) \\
+			JNG & ugrás, ha nem nagyobb (non-greater) \\	
+			JA & ugrás, ha elõjel nélkül nagyobb \\
+			JC & ugrás, ha elõjel nélkül kisebb \\
+			\hline
+			\end{tabular}
+	\end{table}
+	
+\end{frame}
+
+\begin{frame}{Aritmetikai-logikai egység (ALU)}
+	Funkciói:
+	
+	\begin{itemize}
+		\item bináris összeadás
+		\item logikai mûveletek (Boole-algebra): AND, OR, XOR, NOT
+		\item bitenkénti léptetés jobbra-balra (osztás, illetve szorzás 2-vel) Miért?
+		\item komplemens képzés
+		\item állapotjelzõk (flag regiszter bitjei) beállítása, az utasítás eredménye nulla, pozitív, negatív, elõfordult-e túlcsordulás, hiba, stb.
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Vezérlõ egység (CU-Conrol unit)}
+	Funkciói:
+	
+	\begin{itemize}
+		\item kiolvassa a memóriából a szükséges adatokat, utasításokat
+		\item értelmezi és végrehajtja az utasításokat az ALU és a mikroprogram-tár segítségével
+		\item vezérli a belsõ busz adatforgalmát
+		\item összehangolja a CPU többi egységének mûködését
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Mikroprogram-tár}
+	
+	\begin{itemize}
+		\item a processzor végre tud hajtani bizonyos egyszerûbb utasításokat hardveresen
+		\item ezekbõl az elemi utasításokból a processzor gyártója elkészít (programoz) összetettebb utasításokat
+		\item ezeket a programokat nevezzük mikroprogramnak
+		\item ezeket tartalmazza a mikroprogram-tár
+		\item a CISC processzorokban több utasítás van megvalósítva hardveresen, kevesebb a mikroprogram
+		\item a RISC processzorokban kevesebb a hardveresen megvalósított utasítás, több a mikroprogram
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{A mikroprocesszor mûködése}
+	
+	\begin{itemize}
+		\item kiolvassa a memóriából a számítógépet vezérlõ program utasításait
+		\item dekódolja (értelmezi) az utasításokat
+		\item vezérli és idõzíti a mûveletek elvégzéséhez szükséges adatforgalmat és a perifériák tevékenységét
+		\item beolvassa a memóriából az utasítás végrehajtásához szükséges adatokat
+		\item a beolvasott adatokon sorban elvégzi a szükséges mûveleteket: ezek elsõsorban logikai mûveletek lehetnek, de erre visszavezethetõk az egyéb, pl. aritmetikai mûveletek is
+		\item az utasítás eredményét visszaírja a memóriába
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Órajel és gépi ciklus}
+	
+	\begin{itemize}
+		\item a számítógép alkatrészeinek összehangolt mûködését az órajelgenerátor biztosítja
+		\item minden mûveletet ez az órajel ütemez
+		\item minden gépi utasítás a  gépi ciklus egészszámú többszöröse alatt megy végbe
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Tárolók, memória}
+	
+	\begin{itemize}
+		\item az adatokat és az utasításokat a számítógép a memóriában tárolja
+		\item a memória egysége a szó, a byte (bájt) egészszámú többszöröse
+		\item minél nagyobb a szó mérete, annál nagyobb adatokkal képes a processzor egy lépésben mûveleteket végezni
+		\item minden rekesznek egyedi címe, sorszáma van (fizikai cím)
+		\item ennek alapján bármelyik rekesz közvetlenül elérhetõ
+		\item a tárkapacitást a rendelkezésre álló rekeszek (bájtok) számával mérjük
+	\end{itemize}
+	
+	
+	\begin{table}[htbp]
+		\centering
+			\begin{tabular}{|ccc|}
+			\hline
+			1 KByte & = & 1024 bájt \\
+			1 MByte & = & 1024 KByte \\
+			1 GByte & = & 1024 MByte \\
+			1 TByte & = & 1024 GByte \\
+			\hline	
+			\end{tabular}
+	\end{table}
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Tárolók osztályozása}
+	
+	\begin{enumerate}
+		\item Az adatok elérése szerint:
+		
+		\begin{itemize}
+			\item soros, pl. mágnesszalag
+			\item közvetlen, direkt, pl. RAM (Random Access Memory)
+			\item asszociatív, tartalom szerint
+		\end{itemize}
+
+		\item Az adatok módosíthatósága szerint:
+		
+		\begin{itemize}
+			\item csak olvasható, pl. ROM (Read Only Memory)
+			\item írható/olvasható, pl. RAM
+			\item újraprogramozható, pl. EPROM (Erasable Programmable Read Only Memory)
+		\end{itemize}
+		
+		\item Mûködési elv szerint:
+		
+		\begin{itemize}
+			\item mágneses
+			\item kondenzátoros
+			\item optikai
+		\end{itemize}
+		
+		\item Az adatok tárolási módja szerint:
+		
+		\begin{itemize}
+			\item dinamikus: az áramellátás megszûnésekor törlõdik, pl. memória modulok
+			\item statikus: áramellátás nélkül is megõrzi tartalmát, pl. merevlemez
+		\end{itemize}
+		
+		\item Funkció szerint:
+		
+		\begin{itemize}
+			\item operatív tár: gyors, de drága
+			\item háttértár: olcsó, de lassú
+		\end{itemize}
+		
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}{Kapcsolat a számítógép alkatrészei között}
+	
+	Hogyan kapcsolhatjuk össze egy rendszer különbözõ komponenseit?
+	\begin{enumerate}
+		\item mindenkit-mindenkivel
+		
+		\begin{itemize}
+			\item nagyon sok egyedi kapcsolat
+			\item egyszerû adminisztráció
+			\item nehezen bõvíthetõ
+		\end{itemize}
+		
+		\item mindenki kapcsolódjon egy közös kommunikációs felületre
+		
+		\begin{itemize}
+			\item könnyen bõvíthetõ
+			\item kevesebb ,,kábel''
+			\item bonyolult adminisztráció
+		\end{itemize}
+		
+	\end{enumerate}
+	
+	\begin{itemize}
+		\item A mikroszámítógépek tervezõi a 2. megoldást használják
+		\item Ezt nevezzük bus, vagy sín topológiának
+	\end{itemize}
+		
+\end{frame}
+
+\begin{frame}{Bus (sín) topológia}
+	
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=4in]{images/bustopology.png}
+		\label{fig:bustopology}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Különbözõ bus (sín) rendszerek}
+	
+	\begin{itemize}
+		\item ISA (Industry Standard Architecture)
+		\begin{itemize}
+			\item elõször 8, majd 16 bit
+			\item 8 MHz, 6 MB/s
+		\end{itemize}
+
+		\item MCA (Micro Channel)
+		\begin{itemize}
+			\item 32 bit
+			\item 10 MHz
+		\end{itemize}
+
+		\item EISA (Extended ISA)
+		\begin{itemize}
+			\item 32 bit
+			\item 8 MHz, 32 MB/s
+		\end{itemize}
+		
+		\item VESA (Video Electronics Standards Association)
+		\begin{itemize}
+			\item 32-64 bit
+			\item 40-50 MHz, 132+ MB/s
+		\end{itemize}
+		
+		\item PCI (Peripherial Component Interconnect)
+		\begin{itemize}
+			\item 64 bit
+			\item 33 MHz, 120 MB/s
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{frame}
+
+\section{Perifériák}
+\label{sec:Periferiak}
+
+
+\subsection{Kommunikációs formák}
+\label{sec:KommunikaciosFormak}
+
+\begin{frame}{Szabványos interfészek}
+	
+	\begin{itemize}
+		\item soros port (aszinkron, Serial, RS-232C, COM)
+		\item párhuzamos port (Parallel, Printer, Centronics, LPT)
+		\item game port
+		\item SCSI (Small Computer System Interface) gyors, de drága
+		\item Firewire port, IEEE 1394, soros, 63 eszköz, 400 Mbit/s
+		\item USB (Universal Serial Bus) jellemzõi:
+
+		\begin{itemize}
+			\item egyszerû csatlakoztathatóság
+			\item legfeljebb 127 eszközt támogat egyidejûleg
+			\item valós idejû perifériák kiszolgálása (pl. hang, telefon)
+			\item plug and play technika (bedugás után önállóan települ)
+			\item elektromos energiaellátás és adatátvitel egy kábelen
+			\item két bemeneti eszköz között nincs adatforgalom
+		\end{itemize}
+
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Adatátviteli megoldások}
+	
+	\begin{description}
+		\item[Programozott adatátvitel] a perifériával történõ kommunikáció a mikroprocesszor feladata (közben nem csinálhat mást)
+		\item[Megszakításos adatátvitel] a mikroprocesszor közli a feladatot a perifériával, folytatja saját munkáját, a periféria megszakítással jelentkezik be ismét, ha elkészült a feladatával, vagy hiba történt
+		\item[Közvetlen memória hozzáférés] ha az adatátvitel forrása és célja sem a processzor, akkor az a DMA (Direct Memory Access) egység segítségével is lebonyolítható; a processzor csak definiálja a DMA feladatát, adatot nem küld és nem fogad
+	\end{description}
+	
+\end{frame}
+
+\subsection{Perifériák}
+\label{sec:Periferiak}
+
+\begin{frame}{Perifériák}
+	
+	\begin{table}[htbp]
+		\centering
+			\begin{tabular}{|l|l|l|}
+			\hline
+			\textbf{beviteli perifériák} & \textbf{kimeneti perifériák} & \textbf{input/output} \\
+			\textbf{(input)} & \textbf{(output)} & \textbf{perifériák} \\
+			\hline
+			billentyûzet & monitor & floppy disk \\
+			egér & nyomtató & winchester \\
+			fényceruza & plotter, rajzgép & streamer \\
+			touchpad & hangeszközök & CD meghajtó \\
+			digitalizáló tábla & projektor & DVD meghajtó\\
+			szkenner & & pendrive \\
+			joystick & & SSD disk \\
+			\hline
+			\end{tabular}
+	\end{table}
+	
+\end{frame}
+
+\begin{frame}{Merevlemez felépítése és mûködése}
+	
+	\begin{figure}
+		\centering
+			\includegraphics[height=1in]{images/hdd1.png}
+		\label{fig:hdd1}
+	\end{figure}
+		
+	\begin{figure}
+		\centering
+			\includegraphics[width=3in]{images/hdd2.png}
+		\label{fig:hdd2}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{A CD meghajtó felépítése}
+	
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=0.50\textwidth]{images/OptikaiOlvaso.jpg}
+		\label{fig:OptikaiOlvaso}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Egy mikroszámítógép alaplapja}
+	
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=0.80\textwidth]{images/motherboard.png}
+		\label{fig:motherboard}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Befejezés}
+
+\begin{block} {}
+	
+	\begin{center}
+	\vspace{1cm}
+	\LARGE{Köszönöm a figyelmet!}
+	\vspace{1cm}
+	\end{center}
+	
+\end{block}
+
+\end{frame}
+
+\end{document}
+
+

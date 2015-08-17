@@ -1,0 +1,988 @@
+% $Header: /cvsroot/latex-beamer/latex-beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 1.7 2007/01/28 20:48:23 tantau Exp $
+
+% Version for PROJECTOR (Vetíthetõ változat)
+% Uncomment the next line (A vetíthetõ változathoz vedd ki a % jelet a következõ sor elejérõl)
+%\documentclass{beamer}
+% End of version for PROJECTOR (A vetíthetõ változat vége)
+
+% PRINTABLE version (Nyomtatható változat):
+% Uncomment the next two lines (vedd ki a % jelet a következõ 2 sor elejérõl)
+%\documentclass{article}
+%\usepackage{beamerarticle}
+% End of PRINTABLE version (A nyomtatott változat beállításának vége)
+
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  % or ...
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+% Magyar szöveg
+\usepackage[magyar]{babel}		% a Babel csomagot a magyar nyelvvel használjuk
+\usepackage[latin2]{inputenc}		% Latin-2-es kódolású ez a forrás
+\usepackage{t1enc}			% a belsõ ábrázolás és a kimeneti font-kódolás
+					% a T1 kódolás
+\usepackage{indentfirst}		% az elsõ bekezdés is behúzott legyen, ne csak a 2-tól
+\frenchspacing				% a mondatköz ugyanakkora nagy, mint a szóköz
+\setlength{\parskip}{\smallskipamount}	% bekezdések közötti távolság beállítása
+					% (gumi-méret: 3pt plus 1pt minus 1 pt)
+% Magyar szöveg vége
+
+
+% Angol szöveg
+%\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+% Angol szöveg vége
+
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\def\screenshotsize{0.70}
+\def\screenshotsizeB{0.50}
+\def\maintitle{Számítógépes alkalmazások \\Alapok}
+\def\shorttitle{SZALK -- Alapok}
+\def\longdate{Sopron, 2015.}
+\def\shortdate{2015}
+
+%packages to use
+\usepackage{graphicx}
+\usepackage{fancybox} 
+\usepackage{multicol}
+
+\only<beamer>{
+%Insert frame number to footline
+%Tested with the next themes: Warsaw, Berlin, Szeged, ...
+\newcommand*\oldmacro{}%
+\let\oldmacro\insertshorttitle%
+\renewcommand*\insertshorttitle{%
+  \oldmacro\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+%End of frame number to footline
+}
+
+\title[\shorttitle] % (optional, use only with long paper titles)
+{\maintitle}
+
+\author[Soós Sándor] % (optional, use only with lots of authors)
+{Soós Sándor}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[NYME SKK INGA] % (optional, but mostly needed)
+{
+%  \inst{1}%
+  Nyugat-magyarországi Egyetem\\
+  Simonyi Károly Mûszaki, Faanyagtudományi és Mûvészeti Kar\\
+  Informatikai és Gazdasági Intézet\\
+  \vspace{0.3cm}
+  E-mail: soossandor@inf.nyme.hu
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[\shortdate] % (optional, should be abbreviation of conference name)
+{\longdate}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+
+\only<article>{
+\begin{titlepage}
+
+\begin{center}
+
+%\vspace*{1cm}
+\Large
+\textsc{\maintitle}\\
+
+\vspace{5cm}
+
+%\LARGE
+\textsc{Soós Sándor}\\
+
+\vspace{5cm}
+%\textsc{\today}\\ %%Date - better you write it yourself.
+\textsc{\longdate}\\
+
+\end{center}
+
+\end{titlepage}
+}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+\only<beamer>{
+\pgfdeclareimage[height=1cm]{university-logo}{images/nyme_skk}
+\logo{\pgfuseimage{university-logo}}
+}
+
+%\only<beamer>{\subject{Practical Computer Science}}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+\only<beamer>{
+\begin{frame}{}
+  \titlepage
+\end{frame}
+}
+
+\begin{frame}{Tartalomjegyzék}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+\section{Bevezetés}
+\label{sec:Bevezetés}
+
+\begin{frame}{Mirõl lesz szó a mai órán?}
+
+\begin{itemize}
+	\item A számítógépek mûködésének alapjai
+	\item Kettes számrendszer
+	\item Logikai alapmûveletek
+	\item A rendszer fogalma, rendszerszemlélet
+	\item Kódolás, kódrendszerek, számok kódolása
+\end{itemize}
+
+\end{frame}
+
+
+\section{Alapfogalmak}
+\label{sec:Alapfogalmak}
+
+\subsection{Kettes számrendszer}
+\label{sec:KettesSzamrendszer}
+
+\begin{frame}{Kettes számrendszer}
+
+\begin{itemize}
+	\item Mi az a kettes számrendszer?
+	\item Miért jó, ha ezt használjuk a számítógép mûködésének alapjául?
+	\item Két számjegy (0, 1) $\Leftrightarrow$ Kétállapotú jelenségek (áram, mágnesség)
+	\item Az áramkörök modellezhetõk a matematikai logika elméletével
+\end{itemize}
+
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+		\hline
+		Bináris számjegy & Áram & Mágnesség \\
+		\hline \hline
+		0 & nincs áram (0V) & pozitív \\
+		\hline
+		1 & van áram (5V, 3V) & negatív \\
+		\hline
+			
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\end{frame}
+
+\subsection{Logikai és aritmetikai mûveletek}
+\label{sec:LogikaiMuveletek}
+
+\begin{frame}[allowframebreaks]{Logikai mûveletek igazságtáblája}
+
+\begin{enumerate}
+	\item Negáció -- NOT (egyváltozós) ellentettjére változtatja a logikai értéket\\
+
+\begin{table}[htbp]
+	\centering
+		\begin{tabular}{|c|c|}
+			\hline
+			$A$ & $\neg A$ \\ \hline \hline
+			$0$ & $1$ \\ \hline
+			$1$ & $0$ \\ \hline
+		\end{tabular}
+\end{table}
+	
+	\item És -- AND (kétváltozós) igaz, ha mindkét operandus igaz
+
+\begin{table}[htbp]
+	\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$A$ & $B$ & $A \wedge B$ \\ \hline \hline
+			$0$ & $0$ & $0$ \\ \hline
+			$0$ & $1$ & $0$ \\ \hline
+			$1$ & $0$ & $0$ \\ \hline
+			$1$ & $1$ & $1$ \\ \hline
+		\end{tabular}
+\end{table}
+	\newpage
+	\item Vagy -- OR (kétváltozós) igaz, ha valamelyik operandus igaz
+
+\begin{table}[htbp]
+	\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$A$ & $B$ & $A \vee B$ \\ \hline \hline
+			$0$ & $0$ & $0$ \\ \hline
+			$0$ & $1$ & $1$ \\ \hline
+			$1$ & $0$ & $1$ \\ \hline
+			$1$ & $1$ & $1$ \\ \hline
+		\end{tabular}
+\end{table}
+\newpage
+
+	\item Kizáró vagy -- XOR (kétváltozós) igaz, ha pontosan az egyik operandus igaz
+
+\begin{table}[htbp]
+	\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$A$ & $B$ & $A\;xor\;B$ \\ \hline \hline
+			$0$ & $0$ & $0$ \\ \hline
+			$0$ & $1$ & $1$ \\ \hline
+			$1$ & $0$ & $1$ \\ \hline
+			$1$ & $1$ & $0$ \\ \hline
+		\end{tabular}
+\end{table}
+	
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Aritmetikai mûveletek}
+
+\begin{enumerate}
+
+	\item Egybites szorzás kettes számrendszerben
+
+\begin{table}[htbp]
+	\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$A$ & $B$ & $A \times B$ \\ \hline \hline
+			$0$ & $0$ & $0$ \\ \hline
+			$0$ & $1$ & $0$ \\ \hline
+			$1$ & $0$ & $0$ \\ \hline
+			$1$ & $1$ & $1$ \\ \hline
+		\end{tabular}
+\end{table}
+	
+	\item Egybites összeadás kettes számrendszerben
+
+\begin{table}[htbp]
+	\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$A$ & $B$ & $A + B$ \\ \hline \hline
+			$0$ & $0$ & $00$ \\ \hline
+			$0$ & $1$ & $01$ \\ \hline
+			$1$ & $0$ & $01$ \\ \hline
+			$1$ & $1$ & $10$ \\ \hline
+		\end{tabular}
+\end{table}
+	
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Kapcsolat a logikai és az aritmetikai mûveletek között}
+
+\begin{enumerate}
+	\item A szorzás mûveleti táblája megegyezik az És -- AND mûvelet igazságtáblájával
+	\item Az összeadás felsõ bitjét az És -- AND, az alsó bitjét a Kizáró vagy -- XOR igazságtáblája szolgáltatja
+	\item A több-bites aritmetikai mûveleteket hasonlóképpen összerakhatjuk a logikai mûveletekbõl
+	\item A logikai mûveletek könnyen megvalósíthatók elektronikai alkatrészekkel (ÉS-kapu, VAGY-kapu, stb.)
+	\item Így tudunk számolni elektronikus áramkörökkel
+	\item A processzor logikai kapuk hálózatából épül fel
+\end{enumerate}
+
+\end{frame}
+
+\subsection{A rendszerszemlélet}
+\label{sec:ARendszerszemlelet}
+
+\begin{frame}{A rendszer fogalma}
+
+\begin{itemize}
+	\item Rendszernek nevezzük alkotóelemek és ezek kapcsolatainak olyan együttesét, amelyek az adott vizsgálat szempontjából összetartoznak
+	\item A rendszerek kisebb alrendszerekbõl, és tovább nem bontható alapelemekbõl épülnek fel
+	\item Alapelemnek nevezzük a rendszer azon alkotóelemeit, amelyeket az aktuális vizsgálatban nem bontunk tovább kisebb elemekre
+	\item Példák: autó, számítógép, ember
+	\item Vizsgáljuk meg ezeket a rendszereket!
+	\item Rendszerszemlélet
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{A rendszerek bonyolultsága}
+
+\begin{itemize}
+	\item Bonyolultság szempontjából két csoportba oszthatjuk a rendszereket:
+	
+	\begin{enumerate}
+		\item egyszerû rendszer: 
+		\begin{itemize}
+			\item kisszámú alapelembõl felépülõ rendszer
+			\item könnyen áttekinthetõ, vizsgálható
+		\end{itemize}
+		
+		\item összetett rendszer: 
+		\begin{itemize}
+			\item nagyszámú alkotóelembõl és/vagy alrendszerekbõl felépülõ rendszer
+			\item a rendszer vizsgálatához célszerû részrendszerekre bontani
+		\end{itemize}
+		
+	\end{enumerate}
+	
+	\item A mérnöki rendszerek vizsgálatának alapvetõ módszere a részekre bontás
+	\item Minden rendszer vizsgálható ezzel a módszerrel?
+	
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{A rendszerek bonyolultsága}
+
+\begin{itemize}
+	\item A rendszer nem egyenlõ a részeinek összegével!
+	\item Minél összetettebb egy rendszer, annál nagyobb a különbség a kettõ között
+	\item Mi a különbség?
+	\item Kapcsolatok!!!
+	\item Hogyan vizsgálhatók az összetett rendszerek?
+	
+	\begin{itemize}
+		\item Modellezés
+		\item Absztrakció
+		\item Kiválasztjuk a rendszer azon jellemzõit, amelyek a vizsgálat szempontjából fontosak
+		\item Felépítünk egy másik rendszert (modell), ami egyszerûbb a vizsgált rendszernél, de a kiválasztott jellemzõkben megegyezik azzal
+		\item Ha jól választottuk ki a fontos jellemzõket, és jól építjük fel a modellt, akkor annak vizsgálatával fontos információkat szerezhetünk a vizsgált rendszerrõl
+	\end{itemize}
+	
+\end{itemize}
+
+\end{frame}
+
+\section{A számítógép mûködése}
+\label{sec:ASzamitogepMukodese}
+
+\begin{frame}{A számítógép, mint rendszer}
+
+\begin{itemize}
+	\item A számítógép alkotóelemeit két nagy csoportba soroljuk:
+	\item Hardver:
+	
+	\begin{itemize}
+		\item hardware: kemény áru
+		\item a számítógépet alkotó kézzel fogható alkatrészek összefoglaló neve
+		\item elektronikus áramkörök, mechanikus eszközök, kábelek, perifériák, stb.
+		\item önmagában mûködésképtelen
+	\end{itemize}
+	
+	\item Szoftver:
+	
+	\begin{itemize}
+		\item software: lágy áru
+		\item a számítógépen futó algoritmusok, programok és adatok összessége
+		\item a szoftver mûködteti a számítógép hardver eszközeit
+	\end{itemize}
+	
+	\item Ebben a tárgyban általában a szoftverrel fogunk foglalkozni
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Analóg-digitális technika}
+
+\begin{itemize}
+	\item \textbf{Analóg}nak nevezzük azokat az eszközöket, eljárásokat, amelyek folytonos mennyiségekkel dolgoznak
+	\item \textbf{Digitális}nak nevezzük azokat az eszközöket, eljárásokat, amelyek az adatokat diszkrét (nem folytonos) értékekkel, véges sok számjeggyel közelítik
+	\item \textbf{Digitális ábrázolás} valamely változó értékének diszkrét ábrázolása véges sok számjeggyel
+	\item A természetben az adatok általában analóg formában vannak jelen, hõmérséklet, áramerõsség, feszültség, színek (a fény hullámhossza)
+	\item A számítógépben általában digitális adatokkal dolgozunk
+	\item Szükség van az adatok átalakítására
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Adatok átalakítása}
+
+\begin{enumerate}
+	\item Analóg-digitális (A/D) átalakítás, A/D konverter:
+	
+	\begin{itemize}
+		\item mintavételezés: a folytonos jelbõl véges sok helyen mintát veszünk
+		\item kvantálás: a minta értéktartományát diszkrét intervallumokra osztjuk és minden intervallumot egy kijelölt elemével reprezentálunk
+	\end{itemize}
+
+	\item Digitális-analóg (D/A) átalakítás, D/A konverter:
+	
+	\begin{itemize}
+		\item a digitális jelbõl analóg (folytonos) jelet állít elõ
+	\end{itemize}
+	
+	\item Hol használunk minden nap analóg-digitális átalakítást mindkét irányban?\pause
+	
+	\begin{itemize}
+		\item Modem, kábelmodem
+		\item A telefon és a kábeltévé analóg jelet továbbít
+	\end{itemize}
+	
+\end{enumerate}
+
+\end{frame}
+
+\subsection{Kódolás, kódrendszerek}
+\label{sec:KodolasKodrendszerek}
+
+\begin{frame}{Kódolás, kódrendszerek}
+
+\begin{itemize}
+	\item Az adatok feldolgozásához szükség van arra, hogy a számítógép számára érthetõ formára hozzuk azokat
+	\item Ezt a folyamatot nevezzük kódolásnak
+	\item Általában olyan kódolásokat használunk, amikor az adat és a kódja között kölcsönösen egyértelmû megfeleltetés áll fenn
+	\item Ismerünk olyan kódrendszert, ami nem kölcsönösen egyértelmû?\pause
+	
+	\begin{itemize}
+		\item természetes nyelvek 
+		\item természetes nyelvek fordítása
+		\item többek között ezért sem tudunk beszéddel kommunikálni a számítógépekkel
+		\item veszteséges tömörítés, pl. JPEG képformátum
+	\end{itemize}
+	
+	\item Milyen kódrendszereket ismerünk?
+	
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Elterjedt karakterkódolási rendszerek}
+
+\begin{enumerate}
+	\item ASCII: 
+	
+	\begin{itemize}
+		\item 8 bites kódrendszer
+		\item $2^8=256$ jelet tud megkülönböztetni
+		\item eredetileg 7 bites volt, az elsõ 128 jel szabványos, egységes
+		\item a második 128 karakterre több különbözõ kódkiosztás létezik
+	\end{itemize}
+	
+	\item UNICODE:
+	
+	\begin{itemize}
+		\item 16 bites kódrendszer
+		\item $2^{16}=65536$ jelet tud megkülönböztetni
+		\item ,,minden'' nyelv összes jele elfér benne
+	\end{itemize}
+	
+	\item UTF8:
+	
+	\begin{itemize}
+		\item Általános kódolási rendszer
+		\item Minden karaktert képes kódolni 1-4 byte hosszan
+		\item Változó hosszúságú kódokat használ
+		\item A kódolás leírása: http://en.wikipedia.org/wiki/UTF-8
+		\item Az UTF-8 kódok: http://www.utf8-chartable.de/
+	\end{itemize}
+	
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Karakterosztályok}
+
+\begin{itemize}
+	\item alfabetikus: az angol ábécé kis és nagybetûi (a, b, c, \dots, A, B, C, \dots)
+	\item numerikus: számjegyek: (0, 1, 2, \dots, 9)
+	\item alfanumerikus: alfabetikus vagy numerikus, idõnként beleértünk néhány írásjelet is, pl. \_
+	\item egyéb jelek: írásjelek, nemzeti karakterek, stb.
+\end{itemize}
+
+\end{frame}
+
+\subsection{Számok kódolása}
+\label{sec:SzamokKodolasa}
+
+\begin{frame}{Számok kódolása}
+
+\begin{itemize}
+	\item Kettes számrendszer (bináris)
+	\item Tizenhatos számrendszer (hexadecimális)
+	\item Átváltás kettes, tízes és tizenhatos számrendszer között
+	\item BCD (Binary Coded Decimal/binárisan kódolt decimális)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Kettes számrendszer használata}
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		128 & 64 & 32 & 16 & 8 & 4 & 2 & 1 &  & 10-es számrendszer \\
+		\hline \hline
+		0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & $=$ & $ 1\times 64 + 1\times 4 = 68_{(10)} $ \\ \hline
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & $=$ & $ 1\times 1 = 1_{(10)} $ \\ \hline
+		0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & $=$ & $ 1\times 2 = 2_{(10)} $ \\ \hline
+		0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & $=$ & $ 1\times 2 + 1\times 1 = 3_{(10)} $ \\ \hline
+		0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & $=$ & $ 1\times 4 = 4_{(10)} $ \\ \hline
+		\multicolumn{10}{|c|}{\dots} \\ \hline
+		1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & $=$ & $ 252_{(10)} $ \\ \hline
+		1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & $=$ & $ 253_{(10)} $ \\ \hline
+		1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & $=$ & $ 254_{(10)} $ \\ \hline
+		1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & $=$ & $ 255_{(10)} $ \\ \hline
+			
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\end{frame}
+
+\begin{frame}{Egész számok átalakítása tízes-rõl kettes számrendszerre}
+
+\begin{multicols}{2}
+
+\begin{itemize}
+	\item az egész számot addig osztjuk 2-vel, amíg a hányados 0 nem lesz
+	\item a hányadost írjuk a bal oldali oszlopba
+	\item a maradékot a jobb oldaliba
+	\item az eredményt a jobb oldali oszlopban kapjuk alulról felfelé
+\end{itemize}
+
+\columnbreak
+
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{c|c}
+			hányados & maradék \\
+			\hline \hline
+			73 & $ \div 2 $ \\ \hline
+			36 & 1 \\
+			18 & 0 \\
+			9  & 0 \\
+			4  & 1 \\
+			2  & 0 \\
+			1  & 0 \\
+			0  & 1 \\
+				
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+\end{multicols}
+
+
+\begin{center}
+\fbox{ $ 73_{(10)} = 1001001_{(2)} $ }
+\end{center}
+
+\end{frame}
+
+\begin{frame}{A törtrész átalakítása}
+
+\begin{multicols}{2}
+
+\begin{itemize}
+	\item a törtrészt addig szorozzuk 2-vel, amíg a szorzat 1,0 nem lesz
+	\item ha ez nem következik be, akkor a kívánt pontosságig folytatjuk a szorzást
+	\item a szorzat egészrészét írjuk a bal oldali oszlopba
+	\item a törtrészt a jobb oldaliba
+	\item az eredményt a bal oldali oszlopban kapjuk felülrõl lefelé
+\end{itemize}
+
+\columnbreak
+
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{c|c}
+			egészrész & törtrész \\
+			\hline \hline
+			$ \times 2 $ & $ 0,125 $ \\ \hline
+			$ 0 $ & $ 0,25 $ \\
+			$ 0 $ & $ 0,5 $ \\
+			$ 1 $ & $ 0 $ \\
+				
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+
+\begin{center}
+\fbox{$ 0,125_{(10)} = 0,001_{(2)} $ }
+\end{center}
+
+\end{multicols}
+
+\end{frame}
+
+\begin{frame}{Átalakítás bináris, oktális és hexadecimális számrendszer között}
+
+\begin{itemize}
+	\item korábban láttuk, hogy a számítógép számára a kettes számrendszer a legalkalmasabb
+	\item a bináris számok leírása nagyon hosszú, ezért körülményesen használhatók
+	\item az átalakítás tízes számrendszerrõl elég körülményes
+	\item ezen a problémán segít a 8-as (oktális) és a 16-os (hexadecimális) számrendszer használata
+	\item Miért?
+	
+	\begin{itemize}
+		\item vegyük észre, hogy $8_{(10)} = 1000_{(2)}$ és $16_{(10)} = 10000_{(2)}$, azaz a 8 és a 16 ,,kerek'' számok kettes számrendszerben, ahogyan a tízes számrendszerben a száz, az ezer, vagy a millió
+		\item Hogyan írnánk át egy számot tízes számrendszerbõl ezresbe?
+	\end{itemize}
+		
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ezres tagolás}
+
+\begin{itemize}
+	\item tízes számrendszerben így szoktuk leírni a nagy számokat: $$123\ 456\ 789$$
+	\item ha a háromjegyû számcsoportokat egy-egy számjegynek tekintjük, akkor ezzel átírtuk a számot ezres számrendszerbe: $$ [123]\ [456]\ [789]_{(1000)} $$
+	\item ha ugyanezt megtesszük a bináris számokkal, akkor ugyanilyen egyszerûen átírhatunk számokat oktális, vagy hexadecinális számrendszerbe
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Bináris-oktális átalakítás}
+
+\begin{multicols}{2}
+
+\begin{itemize}
+	\item Nyolcas számrendszerben 8 számjegyre van szükségünk, ezért használhatjuk a megszokott számjegyeket 0-tól 7-ig
+	\item például:
+	
+	\begin{itemize}
+		\item decimális: $42_{(10)}$
+		\item bináris: $101\ 010_{(2)}$
+		\item oktális: $52_{(8)}$
+	\end{itemize}
+	
+\end{itemize}
+
+\columnbreak
+
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{c|c}
+			oktális számjegy & bináris szám \\
+			\hline \hline
+			0 & 000 \\
+			1 & 001 \\
+			2 & 010 \\
+			3 & 011 \\
+			4 & 100 \\
+			5 & 101 \\
+			6 & 110 \\
+			7 & 111 \\
+				
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+\end{multicols}
+
+\end{frame}
+
+\begin{frame}{Bináris-hexadecimális átalakítás}
+
+\begin{itemize}
+	\item Tizenhatos számrendszerben 16 számjegyre van szükség 0-tól 15-ig
+	\item 10-tõl 15-ig az ábécé elsõ 6 betûjét használjuk (A-F)
+\end{itemize}
+
+\begin{multicols}{2}
+
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{c|c}
+			hexa szjegy & bináris szám \\
+			\hline \hline
+			0 & 0000 \\
+			1 & 0001 \\
+			2 & 0010 \\
+			3 & 0011 \\
+			4 & 0100 \\
+			5 & 0101 \\
+			6 & 0110 \\
+			7 & 0111 \\
+				
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+\columnbreak
+
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{c|c}
+			hexa szjegy & bináris szám \\
+			\hline \hline
+			8 & 1000 \\
+			9 & 1001 \\
+			A (10) & 1010 \\
+			B (11) & 1011 \\
+			C (12) & 1100 \\
+			D (13) & 1101 \\
+			E (14) & 1110 \\
+			F (15) & 1111 \\
+				
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+\end{multicols}
+
+\end{frame}
+
+\begin{frame}{Bináris-hexadecimális átalakítás}
+
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|l|cc|}
+			\hline
+			decimális & \multicolumn{2}{c|}{$42_{(10)}$} \\ \hline
+			bináris   & \multicolumn{2}{c|}{$00101010_{(2)}$} \\ \hline
+			bináris tagolva   & $0010$ & $1010_{(2)}$ \\ \hline
+			hexadecimális tagolva & $2$ & $A_{(16)}$ \\ \hline
+			hexadecimális & \multicolumn{2}{c|}{$2A_{(16)}$} \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+\begin{itemize}
+	\item Melyiket használjuk az oktális, vagy a hexadecimális számrendszert?
+	\item A ma használatos számítógépek 8 bites szervezésûek, ezért a hexadecimális írásmód a legcélszerûbb
+	\item Egy bájtnyi (8 bit) adatot két hexadecimális számjeggyel írunk le
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{BCD - Binary Coded Decimal}
+
+\begin{itemize}
+	\item Binárisan kódolt decimális számábrázolás
+	\item az elõzõ ötletet alkalmazhatjuk bináris és decimális számrendszerek között is
+\end{itemize}
+
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|l|cccc|}
+			\hline
+			decimális & \multicolumn{4}{c|}{$1789_{(10)}$} \\ \hline
+			decimális tagolva & $1$ & $7$ & $8$ & $9_{(10)}$ \\ \hline
+			bináris tagolva   & $0001$ & $0111$ & $1000$ & $1001_{(2)}$ \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+\begin{itemize}
+	\item ez egy kicsit pazarló ábrázolás, mert a 4 biten elérhetõ 16 lehetõség közül csak 10-et használunk fel
+	\item Pakolt BCD kód esetén két-két BCD számjegy 1 bájtba kerül
+	\item Zónázott BCD kód esetén minden számjegyet külön bájtban tárolunk, ez tovább csökkenti a kód tömörségét, de egyszerûbbé teszi az aritmetikát
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Negatív számok kezelése}
+
+\begin{itemize}
+	\item az eddig tárgyalt módszerekkel tetszõleges pozitív egész számokat tudunk kezelni
+	\item a használt bitek száma meghatározza az ábrázolható számok méretét, de bármekkora számokat megvalósíthatunk
+	\item Mit tegyünk a negatív számokkal?
+	
+	\begin{enumerate}
+		\item minden számhoz külön tároljuk az elõjelét
+		
+		\begin{itemize}
+			\item minden alkalommal, amikor használni akarjuk a számot, meg kell vizsgálni az elõjelet, és attól függõen kell használni az értéket
+		\end{itemize}
+		
+		\item építsük be az elõjelet a számok ábrázolásába, lehetõleg úgy, hogy jól mûködjön az aritmetika
+		\begin{itemize}
+			\item a számok ábrázolásához felhasználható bitek közül egyet lefoglalunk (általában a legmagasabb helyiértékût), és ezen tároljuk az elõjelet, 0: pozitív, 1: negatív
+			\item az ábrázolható számok abszolútértékét ezzel megfeleztük
+			\item pl. $0, \dots, +255$ helyett $-128, \dots, +127$
+		\end{itemize}
+		
+	\end{enumerate}
+	
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Komplemensképzés}
+
+\begin{itemize}
+	\item ezzel a módszerrel úgy ábrázoljuk a negatív számokat, hogy azokkal ugyanúgy végezhessünk mûveleteket, mint a pozitív számokkal
+	\item \emph{komplemens}: az a szám, amelyik az ábrázolható legnagyobb számnál eggyel nagyobbra egészíti ki az adott számot
+	\item jele: $\overline{x}$
+	
+	\begin{itemize}
+		\item ha tízes számrendszerben háromjegyû számokkal dolgozunk
+		\item a legnagyobb ábrázolható szám: $999$
+		\item egy $a$ szám komplemense: $\overline{a}=1000-a$
+		\item pl. $\overline{196}=1000-196=804$
+	\end{itemize}
+	
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Kettes komplemens}
+
+\begin{itemize}
+	\item Kettes számrendszerben a következõképpen képezhetjük a kettes komplemenst:
+	
+	\begin{enumerate}
+		\item a legkisebb helyiértéktõl indulva, végigmegyünk a biteken
+		\item amíg 0 biteket találunk, azokat változatlanul leírjuk
+		\item amikor 1-est találunk, azt még szintén leírjuk, de a további biteket invertáljuk
+	\end{enumerate}
+	
+	\item \emph{Egyes komplemens}: a bináris szám bitenkénti negáltja, azaz minden bitjét az ellenkezõjére állítjuk
+	\item ha az egyes komplemenshez egyet hozzáadunk, megkapjuk a kettes komplemenst
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Példa komplemensképzésre}
+
+\begin{itemize}
+	\item Például 8 bites számokkal dolgozunk, $$11111111_{(2)}+1=100000000_{(2)}=256_{(10)}$$-ra kell kiegészíteni
+\end{itemize}
+
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|c|r|r|}
+			\hline
+			$x$            & $10111000_{(2)}$ & $184_{(10)}$ \\ \hline
+			$\overline{x}$ & $01001000_{(2)}$ &  $72_{(10)}$ \\ \hline
+			$x$ egyes komplemense & $01000111_{(2)}$ & $71_{(10)}$ \\ \hline
+			$x$ egyes kompl. $+1$ & $01001000_{(2)}$ &  $72_{(10)}$ \\ \hline
+			\hline
+			$x+\overline{x}$ & $100000000_{(2)}$ &  $256_{(10)}$ \\ \hline
+
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+\end{frame}
+
+\begin{frame}{Elõjeles számok ábrázolása kettes komplemens kódban }
+
+\begin{itemize}
+	\item vegyünk egy kétbájtos számot
+	\item a legmagasabb helyiértékû biten (16.) tároljuk az elõjelet, 0: pozitív, 1: negatív
+	\item a legnagyobb ábrázolható szám: $N_{max}=2^{15}-1 = 32767$
+\end{itemize}
+
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			16. & 15. & 14. & \dots & 6. & 5. & 4. & 3. & 2. & 1. & \\ \hline
+			0   & 0   & 0   & \dots & 1  & 1  & 0  & 1  & 0  & 0  & $=52_{(10)}$ \\ \hline
+			1   & 1   & 1   & \dots & 0  & 0  & 1  & 0  & 1  & 1  & egyes kompl. \\ \hline
+			0   & 0   & 0   & \dots & 0  & 0  & 0  & 0  & 0  & 1  & $+1$ \\ \hline
+			1   & 1   & 1   & \dots & 0  & 0  & 1  & 1  & 0  & 0  & $-52$ kódolva \\ \hline
+			
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+\end{frame}
+
+\begin{frame}{Számolás kettes komplemens kódban }
+
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			16. & 15. & 14. & \dots & 6. & 5. & 4. & 3. & 2. & 1. & \\ \hline
+			1   & 1   & 1   & \dots & 0  & 0  & 1  & 1  & 0  & 0  & $-52_{(10)}$ \\ \hline
+			0   & 0   & 0   & \dots & 1  & 1  & 0  & 1  & 1  & 1  & $+55_{(10)}$ \\ \hline
+			0   & 0   & 0   & \dots & 0  & 0  & 0  & 0  & 1  & 1  & $-52+55=3$ \\ \hline
+			
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+\end{frame}
+
+%\begin{frame}{name}
+%
+%\end{frame}
+
+%\begin{frame}{name}
+%
+%\end{frame}
+
+
+
+\section{Befejezés}
+\label{sec:Befejezés}
+
+\begin{frame}{Befejezés}
+
+\begin{block} {}
+	
+	\begin{center}
+	\vspace{1cm}
+	\LARGE{Köszönöm a figyelmet!}
+	\vspace{1cm}
+	\end{center}
+	
+\end{block}
+
+\end{frame}
+
+\end{document}
+
+
